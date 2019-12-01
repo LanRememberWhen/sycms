@@ -1,0 +1,18 @@
+document.writeln("<div id=\"SOHUCS\" sid=\"184913\"></div>");
+document.writeln("<script>");
+document.writeln("(function(){");
+document.writeln("    var expire_time = parseInt((new Date()).getTime()/(5*60*1000));");
+document.writeln("    var head = document.head || document.getElementsByTagName(\"head\")[0] || document.documentElement;");
+document.writeln("    var script_version = document.createElement(\"script\"),script_cyan = document.createElement(\"script\");");
+document.writeln("    script_version.type = script_cyan.type = \"text/javascript\";");
+document.writeln("    script_version.charset = script_cyan.charset = \"utf-8\";");
+document.writeln("    script_version.onload = function(){");
+document.writeln("        script_cyan.id = \'changyan_mobile_js\';");
+document.writeln("        script_cyan.src = \'http://changyan.itc.cn/upload/mobile/wap-js/changyan_mobile.js?client_id=cyrvw5MYg&\'");
+document.writeln("                        + \'conf=prod_b3f6ebe680bdfd98fae3fa9223078e2b&version=\' + cyan_resource_version;");
+document.writeln("        head.insertBefore(script_cyan, head.firstChild);");
+document.writeln("    };");
+document.writeln("    script_version.src = \'http://changyan.sohu.com/upload/mobile/wap-js/version.js?_=\'+expire_time;");
+document.writeln("    head.insertBefore(script_version, head.firstChild);");
+document.writeln("})();");
+document.writeln("</script>");

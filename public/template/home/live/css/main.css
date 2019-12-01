@@ -1,0 +1,604 @@
+﻿html{margin:0;padding:0;border:0;}
+
+body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,code,del,dfn,em,img,q,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,dialog,figure,footer,header,hgroup,nav,section{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
+article,aside,details,figcaption,figure,dialog,footer,header,hgroup,menu,nav,section{display:block;}
+body{line-height:1.5;background:white;}
+table{border-collapse:separate;border-spacing:0;}
+caption,th,td{text-align:left;font-weight:normal;float:none!important;}
+table,th,td{vertical-align:middle;}
+blockquote:before,blockquote:after,q:before,q:after{content:'';}
+blockquote,q{quotes:"""";}
+a img{border:0;}
+:focus{outline:0;}
+ul,ol,li{list-style:none;}
+button,input,select,textarea,label{vertical-align:middle;}
+h1,h2,h3,h4,h6,h6{font-weight:bold;font-size:100%;}
+a{ color: #333;}
+a:link{text-decoration:none;color:#333;}
+a:visited{text-decoration:none;}
+a:hover{text-decoration:none; color: #dc3030;}
+.align-r{text-align:right;}
+.align-c{text-align:center;}
+.align-l{text-align:left;}
+.bold{font-weight:bold;}
+.hide{display:none;}
+.block{ display: block;}
+.clearfix:after{clear:both;content:'.';display:block;font-size:0;line-height:0;visibility:hidden;height:0;}
+.clearfix{zoom:1;}
+.fl{ float: left;}
+.fr{ float: right;}
+.ov{ overflow: hidden;}
+body{font-family:'微软雅黑',tahoma,arial; color: #333; font-size: 14px;}
+
+i{ font-style: normal;}
+
+.hr{ width: 100%; clear: both; overflow: hidden;}
+.hr10{ height: 10px;}
+.hr14{ height: 14px;}
+.hr20{ height: 20px;}
+.hr30{ height: 30px;}
+.hr40{ height: 40px;}
+.hr50{ height: 50px;}
+.hr60{ height: 60px;}
+.w1000{ width: 1000px; margin: 0 auto;}
+.w647{ width: 647px; float: left;}
+.w323{ width: 323px; float: right;}
+
+/*header*/
+.header{ padding-top: 26px; padding-bottom: 12px;}
+.logo{ padding-top: 10px;}
+.logo, .logo a{ width: 300px; height: 60px;}
+.logo a{ background: url(../bg/logo.png) left center no-repeat;}
+.headerList li{ width: 207px; height: 80px; padding: 8px; border: 2px solid #eeeeee; float: left; margin-left: 25px; display: inline;}
+.headerList li img{ width: 75px; height: 75px; float: left; margin-right: 16px;}
+.headerList li i{ font-size: 12px; color: #ababab; font-style: normal; height: 16px; line-height: 16px; overflow: hidden; margin-bottom: 2px;}
+.headerList li b{ height: 38px; line-height: 19px; overflow: hidden; font-weight: normal; margin-bottom: 2px;}
+.headerList li strong{ width: 44px; height: 22px; line-height: 22px; text-align: center; color: #fff; background-color: #bbbbbb; font-weight: normal; display: inline-block;}
+.headerList li:hover{ border-color: #dc3030;}
+.headerList .h-playing strong{ background-color: #dc3030;}
+/*navBox*/
+.nav{ height: 58px; line-height: 58px; background-color: #333333; font-size: 16px; padding-left: 10px;}
+.nav li a, .navDrop li a{ display: inline-block; height: 100%;}
+.nav li a:hover, .nav .active{ background-color: #dc3030;}
+.navDrop{ padding-left: 5px; height: 40px; line-height: 40px; font-size: 14px; background-color: #dc3030;}
+.nav li a{ padding: 0 16px;}
+.navDrop li a{ padding: 0 13px;}
+/*banner*/
+.banner, .banner ul li, .banner ul a, .banner ul img{ width: 647px;}
+.banner ul li, .banner ul a, .banner ul img, .banner ul{ height: 405px;}
+.banner ul{ width: 3000px; position: absolute; left: 0; top: 0;}
+.banner{ height: 470px;}
+.bannerbg{ width: 100%; height: 65px; position: absolute; left: 0; bottom: 0; background: url(../bg/ban.jpg) left top repeat;}
+.bannerbg h3{ line-height: 65px; font-size: 20px; padding-left: 20px; width: 530px; overflow: hidden; font-weight: normal;}
+.bannerBtn{ width: 88px; background: #dc3030; height: 100%; position: absolute; right: 0; top: 0;}
+.bannerBtn span{ display: block; width: 44px; float: left; height: 100%;}
+.bannerBtn .prev{ background-position: 15px -180px;}
+.bannerBtn .next{ background-position: -35px -180px;}
+.bannerNum{ position: absolute; right: 10px; bottom: 76px; height: 10px; overflow: hidden; font-size: 0;}
+.bannerNum span{ display: inline-block; width: 9px; height: 9px; overflow: hidden; background-position: -200px -50px; margin: 0 3px;}
+.bannerNum .active{ background-position: -214px -50px;}
+/*todayPlay*/
+.todayPlay{ width: 323px; background: #fafafa; height: 470px; overflow: hidden;}
+.todayPlayHeader{ width: 100%; height: 43px; background-color: #dc3030;}
+.todayPlayHeader h4{ padding-left: 12px; font-size: 18px; font-weight: normal; line-height: 43px;}
+.todayPlayHeader .nextDay{ width: 30px; padding-left: 14px; background-position: -250px -100px; font-size: 12px; line-height: 14px; padding-top:7px; height: 36px; color: #a8a8a8;}
+.todayPlay .tabNav{ padding-left: 37px; height: 34px; line-height: 34px; font-size: 14px; background-color: #eaeaea; color: #6f6f6f;}
+.todayPlay .tabNav i{ padding: 0 19px; color: #dbdbdb;}
+.todayPlay .tabNav .active{ color: #dc3030;}
+.todayPlay .more{ text-align: center; font-size: 14px; color: #5188a6; height: 34px; line-height: 34px;}
+.todayPlay .more a{ display:inline-block; width: 100%; height: 100%; color: #5188a6;}
+.todayPlay .tabList li{ height: 100px; border-bottom: 1px solid #dbdbdb; position: relative; padding-top: 20px;}
+.todayPlay .tabList li .l-dui, .todayPlay .tabList li .r-dui, .todayPlay .tabList li img{ display: block; width: 66px; height: 66px;}
+.todayPlay .tabList li .l-dui, .todayPlay .tabList li .r-dui{ position: absolute; top: 24px;}
+.todayPlay .tabList li .l-dui{ left: 10px;}
+.todayPlay .tabList li .r-dui{ right: 10px;}
+.c-fen{ width: 160px; margin: 0 auto; text-align: center; font-size: 0;}
+.c-fen b{ font-size: 30px; font-weight: normal; color: #dc3030;}
+.c-fen i{ padding: 0px 4px; background-color: #dc3030; color: #fff; display: inline-block; margin: 0 8px;}
+.c-fen a{ display: inline-block; width: 40px; height: 25px; border: 1px solid #dbdbdb; line-height: 25px; margin: 0 3px;}
+.c-fen a:hover{ background-color: #dc3030; border-color: #dc3030; color: #fff;}
+/*impEvent*/
+.impEvent{ border: 1px solid #dc3030; height: 109px; margin-bottom: 27px;}
+.impEvent h4{ width: 116px; height: 100%; background-position: -299px 0; text-indent: -999999em;}
+.impEvent ul{ width: 495px; padding-top: 14px;}
+.impEvent ul li{ float: left; height: 28px; line-height: 28px; overflow: hidden; padding-left: 12px; position: relative; width: 215px; margin-right: 20px; font-size: 14px;}
+.impEvent ul li i{ display: block; width: 5px; height: 5px; overflow: hidden; position: absolute; left: 0; top: 11px; background-position: -200px -100px;}
+/*liveList*/
+.liveListTitle{ height: 37px; line-height: 37px; border-bottom: 2px solid #d8d8d8; margin-bottom: 13px;}
+.liveListTitle h3{ font-size: 24px; font-weight: normal; border-bottom:2px solid #6b6b6b;height: 100%; position: relative; _margin-bottom: -2px;}
+.liveListTitle .todayNum{ width: 121px; padding-left: 39px; font-size: 18px; background-position: 0 -410px;}
+.liveListMain{ border-left: 2px solid #eeeeee;}
+.liveListMainTitle{ height: 53px; line-height: 53px; font-size: 24px;}
+.liveListMainTitle h4{ width: 137px; padding-left: 37px; color: #dc3030; font-size: 24px; background-position: -200px -197px; float: left; font-weight: normal; line-height: 40px; height: 53px; margin-right: 5px;}
+.liveEdayList{ padding-left: 30px; padding-top: 8px; margin-bottom: 40px;}
+.liveEdayList li{ height: 48px; line-height: 48px; position: relative; border-bottom: 1px solid #f4f4f4;}
+.liveEdayList li i{ display: block; width: 34px; height: 10px; background-position: -150px -150px; position: absolute; left: -36px; top: 19px; display: none;}
+.liveEdayList li b{ display: block; width: 80px;}
+.liveEdayList li .fl{ display: block; width: 455px; overflow: hidden; height: 100%;}
+.liveEdayList li .fr{ display: block; text-align: right; height: 100%; position: absolute; right: 0; top: 0; font-weight: bold;}
+.liveEdayList li:hover i{ display: block;}
+/*sideTitle*/
+.sideTitle{ height: 43px; background-color: #fafafa; padding-right: 13px;}
+.sideTitle h4{ border-top: 3px solid #dc3030; background-color: #fff; padding: 0 15px; font-size: 18px; line-height: 40px; font-weight: normal;}
+.sideTitle .more{ line-height: 43px; font-size: 12px; color: #9d9d9d;}
+/*soccerStars*/
+.soccerStars li{ width: 97px; height: 126px; margin-right: 16px;}
+.soccerStars li img, .soccerStars li span{ height: 78px;}
+.soccerStars, .team{ margin-right: -20px; padding-top: 20px;}
+/*team*/
+.team li{ width: 154px;height: 120px; margin-right: 14px;}
+.team li img,.team li img span{ height: 90px;}
+
+
+
+/*推荐直播频道  友情连接 底部*/
+.liveLink{ padding: 16px 0 20px 0; line-height: 28px;}
+.liveLink .live{ width: 490px; border-right: 1px solid #383838;}
+.liveLink  .links{ width: 454px;}
+.liveLinkTitle{ font-weight: normal; font-size: 14px; height: 28px; line-height: 28px;}
+.liveLinkTitle b{ margin-right: 14px; color: #dc3030; }
+.liveChannels li{ width: 25%; float: left; _width:24%;}
+.liveChannels li span, .liveChannels li a{ display: block; height: 28px; overflow: hidden; padding-right: 10px; line-height: 28px;}
+.links p a{ margin-right: 30px;}
+
+.footer{ border-top: 1px solid #3d3d3d; text-align: center; line-height: 24px; font-family: '宋体'; padding: 15px 0;}
+.footer, .liveLink{ background: #333333; width: 100%;}
+.footer a, .footer{ color: #636363;}
+.liveLink a, .liveLink{ color: #aaaaaa;}
+
+/*calendar*/
+.calendar{ width: 272px; overflow: hidden; margin-right: 30px;}
+.calendarHeader{ height: 45px; background-color: #dc3030; color: #fff; text-align: center; line-height: 45px; font-size: 18px;}
+.calendarHeader i{ display: inline-block; width: 6px; height: 100%; vertical-align: middle;}
+.calendarHeader span{ vertical-align: middle; margin: 0 20px;}
+.prevBtn{ background-position: -100px -185px;}
+.nextBtn{ background-position: -125px -185px;}
+.calendarWeeks li{ float: left; width: 38px; background-color: #eeeeee; margin-right: 1px; height: 36px; text-align: center; line-height: 36px; font-size: 14px; color: #535353;}
+.calendarWeeks{ padding-top: 1px; width: 280px;}
+.calendarDays{ width: 280px;}
+.calendarDays span, .calendarDays a{ display: block; float: left; width: 38px; height: 31px; margin: 1px 1px 0 0; background-color: #eeeeee; text-align: center; line-height: 31px;}
+.calendarDays span{ background-color: #fff;}
+
+/******************************每日录像**************************************/
+.caPlayIng{ width: 407px; height: 274px; position: relative;}　
+.caPlayIng a, .caPlayIng img{ display: block; width: 100%; height: 100%;}
+.caPlayIng span{ position: absolute; left: 0; top: 0; padding: 92px 70px 0; height: 182px; width: 296px; line-height: 46px; color: #fff; font-size: 24px; display: none;}
+.caPlayIng span{filter:progid:DXImageTransform.Microsoft.gradient(enabled='true',startColorstr='#B2DC3030', endColorstr='#B2DC3030');background:rgba(220,48,48,0.7);}
+:root .caPlayIng span{filter:progid:DXImageTransform.Microsoft.gradient(enabled='true',startColorstr='#00DC3030', endColorstr='#00DC3030');}/*for IE9*/
+.caPlayIng a:hover span{ display: block;}
+.caList{ width: 262px; margin-top: -12px;}
+#bisaiTable{ width: 100%;}
+#bisaiTable th{ height: 34px; line-height: 34px; text-align: center; background-color: #eaeaea;}
+#bisaiTable td{ height: 50px; line-height: 50px; border-bottom: 1px solid #eee;}
+#bisaiTable .l1, #bisaiTable .l2, #bisaiTable .l3, #bisaiTable .l4, #bisaiTable .l5{ border-right: 1px solid #eee;}
+#bisaiTable .l3, #bisaiTable .l4, #bisaiTable .l5, #bisaiTable .l6{ text-align: center;}
+#bisaiTable .l6 a{ color: #5188a6;}
+#bisaiTable .l6 span{ color: #d4d4d4;}
+#bisaiTable .l5 a, #bisaiTable .l5 span{ height: 29px; width: 26px;}
+#bisaiTable .l5 a{ background-position: -100px -100px;}
+#bisaiTable .l5 span{ background-position: -100px -150px;}
+#bisaiTable .l5 a:hover{ background-position: -100px -50px;}
+#bisaiTable .l5 a, #bisaiTable .l4 a, #bisaiTable .l3 a, #bisaiTable .l5 span, #bisaiTable .l4 span, #bisaiTable .l3 span{ display: inline-block; vertical-align: middle;}
+#bisaiTable .l4 a, #bisaiTable .l4 span{ width: 32px; height: 22px;}
+#bisaiTable .l4 a{ background-position: -50px -100px;}
+#bisaiTable .l4 span{ background-position: -50px -150px;}
+#bisaiTable .l4 a:hover{ background-position: -50px -50px;}
+#bisaiTable .l3 a, #bisaiTable .l3 span{ width: 25px; height: 29px;}
+#bisaiTable .l3 a{ background-position: 0 -99px;}
+#bisaiTable .l3 span{ background-position: 0 -150px;}
+#bisaiTable .l3 a:hover{ background-position: 0 -50px;}
+#bisaiTable .l2{ text-indent: 46px; overflow: hidden;}
+#bisaiTable .l1{ text-indent: 23px; font-weight: bold; color: #999999;}
+#bisaiTable .dayFirst td{ border-top: 1px solid #dc3030;}
+#bisaiTable tbody .dayFirst .l1{ background-color: #dc3030; color: #fff;}
+#bisaiTable .bisaiToday .l1{ color: #dc3030;}
+
+/***********************视频集锦*******************************************/
+.locah{ height: 18px; line-height: 18px; font-size: 12px; color: #999999;}
+.jijinHeader{ text-align: center; line-height: 36px; padding: 20px 0 20px;}
+.jijinHeader .m-title{ font-size: 24px; font-weight: normal;}
+.jijinHeader .m-info{ font-size: 14px;}
+.jijinHeader .m-info i{ color: #999999; margin: 0 20px;}
+.jijinList table{ width: 100%; border-top: 3px solid #dc3030;}
+.jijinList table td{ height: 48px; line-height: 48px; border-bottom: 1px solid #eeeeee; border-right: 1px solid #eee; text-indent: 20px; overflow: hidden;}
+.jijinList table .l3{ border-right: none 0;}
+.jijinList table .l1{ width: 150px; font-weight: bold;}
+.jijinList table .l2{ width: 365px;}
+.jijinIntro{ line-height: 30px; font-size: 16px;}
+.j-side .circleOl li{ height: 44px; line-height: 44px;}
+.j-side .circleOl li i{ top: 10px;}
+
+/********************录像***********************************************/
+.locah2{ border-bottom: 1px solid #eeeeee; padding-bottom: 10px;}
+.videoPageTitle{ font-size: 24px; font-weight: normal; height: 64px; line-height: 64px;}
+.videoPageData{ height: 45px; border-bottom: 2px solid #666666; line-height: 45px;}
+.videoPageData h4{ width: 166px; height: 45px; text-align: center; background-color: #666; color: #fff; font-weight: normal; font-size: 24px;}
+.videoPageData h4 i{ font-size: 12px; padding-left: 4px;}
+.videoPageList .liveEdayList{ padding: 0;}
+.videoPageList .liveEdayList li b{ text-align: center; color: #999999; border-right: 1px solid #f4f4f4;}
+.videoPageList .liveEdayList li .fl{ text-indent: 24px;}
+.imgInfoList li{ height: 80px; padding: 20px 0; border-bottom: dotted 1px #e1e1e1; overflow: hidden; cursor: pointer;}
+.imgInfoList li .imgBox{ height: 100%;}
+.imgInfoList li .imgBox{ float: left; margin-right: 13px; overflow: hidden; width: 113px;}
+.imgTitle{ line-height: 24px; height: 48px; overflow: hidden; font-size: 14px;}
+.sideTavNav i, .sideTavNav span{ float: left;}
+.sideTavNav{ height: 34px; line-height: 34px; padding-left: 29px; background-color: #eaeaea;}
+.sideTavNav i{ color: #e5e5e5; padding: 0 20px;}
+/*****************对战********************************************/
+.duizCorps{ border-top: 1px solid #dc3030; padding-top: 29px; height: 112px; position: relative;}
+.corpsL, .corpsR{ height: 112px; position: absolute; top: 29px; width: 278px;}
+.corpsVS{ width: 100%; height: 100%; text-align: center; line-height: 100px;font-size: 24px; font-weight: bold; color: #7a7a7a;}
+.corpsL{ padding: 0 112px 0 30px; left: 0; background-position: 203px -450px;}
+.corpsR{ padding: 0 30px 0 112px;right: 0; background-position: -220px -450px;}
+.duizCorps h4{ height: 36px; line-height: 36px; font-weight: normal; font-size: 30px; overflow: hidden; padding-top: 10px;}
+.duizCorps p{ height: 24px; line-height: 24px; overflow: hidden; font-size: 18px;}
+.corpsR p, .corpsR h4{ padding-left: 75px;}
+.duizCorps img{ display: block; width: 112px; height: 112px; position: absolute; top: 0;}
+.corpsL img{ right: 4px;}
+.corpsR img{ left: 10px;}
+.corpsItemTitle{ border-top: 2px solid #666666; height: 45px; line-height: 45px; border-bottom: 1px solid #eeeeee;}
+.corpsItemTitle h4{ width: 166px; text-align: center; height: 45px; background-color: #666666; color: #fff; font-size: 24px; font-weight: normal;}
+.corpsItem li{ height: 50px; line-height: 50px; border-bottom: 1px solid #eeeeee; overflow: hidden;}
+.corpsItem li b{ width: 80px; display: block; float: left; text-align: center; border-right: 1px solid #eeeeee; margin-right: 24px;}
+.corpsItem{ margin-bottom: 40px;}
+.tadayCorpsItem .corpsItemTitle{ border-top-color: #dc3030;}
+.corpsLinks{ background-color: #f0f0f0; padding: 20px 0; border-top: 1px solid #eeeeee;}
+.corpsLinks li{ height: 34px; line-height: 34px; overflow: hidden;}
+.corpsLinks li strong, .corpsLinks li a{ float: left;}
+.corpsLinks li a{ margin-right: 30px;}
+.fixeds{ width: 100%; position: fixed; left: 0;}
+.fixeds .w1000{ position: relative;}
+.corpsFix .w1000{ height: 154px;}
+.corpsFix{ bottom: 200px;}
+.corpsFix ul{ width: 46px; border-style: solid; border-color: #eee; border-width: 1px 1px 0 1px; position: absolute; right: -55px; top: 0; background-color: #fff; cursor: pointer;}
+.corpsFix ul li{ width: 100%; height: 45px; padding-top: 6px; line-height: 18px; text-align: center; border-bottom: 1px solid #eee;}
+.corpsFix ul li:hover, .corpsFix ul .active{ background-color: #dc3030; color: #fff;}
+/**********************球队集锦********************************************/
+.qiuDuiIcon img{ width: 183px; height: 155px;}
+.qiuDuiIcon, .qiuStarTouX{ width: 280px; padding-left: 19px; height: 155px; background-position: 0 -250px; margin-right: 90px; position: relative;}
+.qiuStarTouX img{ position: absolute; left: 19px; bottom: 0;}
+.qiuDuiName{ width: 210px; margin-right: 15px;}
+.qiuDuiName span{ font-size: 24px; height: 30px; line-height: 30px; overflow: hidden; display: block; padding-top: 13px;}
+.qiuDuiName h3{ font-size: 36px; height: 40px; line-height: 40px; overflow: hidden; font-weight: normal;}
+.qiuDuiName p{ height: 18px; height: 30px; line-height: 30px; overflow: hidden;}
+.qiuDuiInfo{ width: 220px; padding-top: 15px;}
+.qiuDuiInfo li{ height: 18px; line-height: 18px; overflow: hidden; font-size: 12px; color: #999999;}
+.qiuDuiTouX{ width: 120px; text-align: center; line-height: 18px; font-size: 12px;}
+.qiuDuiTouX img{ width: 100%; height: 80px;}
+.qiuDuiTouX h5. .qiuDuiTouX p{ overflow: hidden;}
+.qiuDui, .qiuStar{ border-top: 2px solid #dc3030; padding-top: 14px; margin-top: 22px; padding-right: 20px;}
+.w647 .soccerStars li{ width: 200px; height: 164px; text-align: left; margin-right: 23px;}
+.w647 .soccerStars li span, .w647 .soccerStars li span img{ height: 112px;}
+.w647 .soccerStars li b{ text-align: left;}
+.w647 .soccerStars li strong{ position: absolute; right: 0; bottom: 0; color: #fff; font-size: 12px; display: block; padding-right: 4px; font-weight: normal;}
+.w647 .soccerStars{ margin-right: -23px;}
+.sideMatch li{ height: 36px; line-height: 36px; overflow: hidden; font-size: 14px;}
+.sideMatch li span{ display: block; float: left; width: 80px; color: #999999;}
+.sideMatch li a.fl{ display: block; width: 180px; color: #000;}
+.sideMatch{ padding-top: 10px;}
+
+/*********************球队列表**********************************************/
+.videoListHeader{ margin-bottom: 25px;}
+.videoListHeader .fl{ width: 347px;}
+.videoListHeader .fl h3{ font-size: 24px; font-weight: normal;}
+.videoListHeader .fr{ width: 647px;}
+.videoListHead{ margin-bottom: 25px;}
+.videoListHead .fl{ width: 347px;}
+.videoListHead .fl h3{ font-size: 24px; font-weight: normal;}
+.videoListHead .fr{ width: 70px;}
+.videoListName{ height: 43px; background-color: #dc3030; line-height: 35px; color: #fff; font-size: 18px; padding: 4px 0 4px 9px; height: 35px;}
+.videoListName img{ width: 34px; display: block; height: 35px; float: left; margin-right: 10px;}
+.videoListBiHeader table{ width: 100%;}
+.videoListBiHeader th{ height: 34px; line-height: 34px; background-color: #eaeaea; font-weight: bold; text-indent: 30px;}
+.videoListBiHeader td{ height: 104px; width: 333px;}
+.videoListBiHeader td .imgBox, .videoListBiHeader td .imgBox img{ display: block; width: 64px; height: 64px;}
+.videoListBiHeader td .imgBox{ float: left; margin-right: 5px;}
+.videoListBiHeader td h4{ font-size: 18px; font-weight: normal; height: 22px; line-height: 22px; overflow: hidden; margin-bottom: 5px;}
+.videoListBiHeader td p{ height: 20px; line-height: 20px; overflow: hidden;}
+.videoListBiHeader td p a{ color: #5188a6;}
+/**********************球星集锦*************************************************/
+.qiuStar .qiuDuiName{ position: relative; padding-top: 20px;}
+.qiuStar .qiuDuiName .quStarNums{ position: absolute; top: 23px; height: 64px; left: -55px; line-height: 64px; font-size: 40px; color: #dec782; font-weight: normal; border-right: 1px solid #eee; width: 50px; text-align: center;}
+.qiuDuiName li{ float: left; width: 50px; text-align: center; font-size: 12px; color: #999999; margin-right: 18px; line-height: 20px;}
+.qiuDuiName li b{ display: block; font-weight: normal; color: #dc3030; font-size: 18px;}
+.qiuStarInfo{ width: 240px; padding-top:35px; line-height: 18px;}
+.qiuStarInfo li{ height: 18px; overflow: hidden; font-size: 12px; color: #999999;}
+.quStarImg{ width: 100px; height: 100px; padding: 10px 10px 0 0;}
+/**********************球星列表*************************************************/
+.qiuStarListNav{ border-bottom: 2px solid #dc3030; height: 43px; line-height: 43px; text-align: center;}
+.qiuStarListNav span, .qiuStarListNav li{ display: inline-block; width: 119px; text-align: center; height: 43px; font-size: 18px;}
+.qiuStarListNav .active{ background-color: #dc3030; color: #fff;}
+.qiuStarListNav .active a{ color: #fff;}
+.qiuStarList li{ width: 226px; border: 1px solid #fff; padding: 5px; float: left; margin-right: 16px; margin-bottom: 30px;}
+.qiuStarList{ padding-top: 30px; margin-right: -30px;}
+.qiuStarList li img{ display: block; width: 100%; height: 208px;}
+.qiuStarList span{ display: block; width: 100%; height: 32px; line-height: 32px; overflow: hidden; text-align: center;}
+.qiuStarList span b{ font-weight: normal; vertical-align: middle; margin: 0 5px; display: inline-block;}
+.qiuStarList span b i{ display: inline-block; width: 15px; height: 13px; vertical-align: middle; background-position: -200px -150px; margin-right: 6px;}
+.qiuStarTurnPage{ text-align: center;}
+.qiuStarTurnPage a{ display: inline-block; width: 386px; height: 56px; border-radius: 4px; background-color: #ececec; line-height: 56px; margin: 0 5px;}
+.qiuStarTurnPage .active{ background-color: #db6d4c; color: #fff;}
+.qiuStarTurnPage .active:hover{ background-color: #e08265;}
+/*********************视频录像*********************************************************/
+.videoPageHeader .fl{ width: 522px; overflow: hidden; height: 64px; line-height: 64px; font-size: 24px; font-weight: normal;}
+.videoPageHeader .fr{ width: 120px; overflow: hidden; font-size: 12px; color: #ababab; line-height: 18px; padding-top: 15px;}
+.videoPageHeader .fr span{ display: block; height: 18px; overflow: hidden; text-align: right;}
+.videoPagePlayInfoCon{ line-height: 36px;}
+.sideBanner{ width: 100%; height: 70px; overflow: hidden; margin-bottom: 22px;}
+.sidePlayList li, .sideTodayVideoList li{ border-bottom: dotted 1px #cbcbcb; padding: 14px 10px 0 38px; position: relative; height: 58px; overflow: hidden;}
+.sidePlayList li i{ display: block; width: 28px; height: 28px; background-position: -100px 0; position: absolute; left: 0; top: 18px;}
+.sidePlayList li:hover i{ background-position: -50px 0;}
+.sidePlayList li span, .sideTodayVideoList li a{ display: block; width: 100%; height: 46px; overflow: hidden;}
+/*********************直播*********************************************************/
+.zibuoHeader{ text-align: center; margin-bottom: 15px;}
+.zibuoTitle{ font-size: 24px; font-weight: normal; height: 50px; line-height: 50px; padding-top: 6px; overflow: hidden;}
+.zibuoTitle strong{ font-weight: normal; color: #dc3030;}
+.zibuoJuTimers{ width: auto; margin: 0 auto; padding: 12px 35px; height: 24px; line-height: 24px; background-color: #dc3030; display: inline-block; border-radius: 3px; text-align: center; color: #fff;  font-size: 16px;}
+.zibuoJuTimers span{ display: inline-block; width: 25px; height: 24px; background-image: url(../bg/t.jpg); color: #333333;}
+.zibuoMainTitle{ height: 38px; line-height: 38px; border-bottom: 2px solid #d8d8d8;}
+.zibuoMainTitle h4{ font-size: 18px; font-weight: normal; border-bottom: 2px solid #dc3737; float: left; position: relative; _margin-bottom: -2px; padding-right: 10px;}
+.zibuoStartTimer, .zibuoClass, .zibuoFrenTips{ line-height: 32px;}
+.zibuoMainList li{ float: left; width: 250px; height: 34px; margin-top: 16px;}
+.zibuoMainList li a{ display: inline-block; height: 32px; padding: 0 18px 0 18px; border: 1px solid #cccccc; border-radius: 4px; line-height: 32px; position: relative;}
+.zibuoMainList li a i{ background-position: -250px 0; display: block; width: 23px; height: 23px; position: absolute; left: 12px; top: 5px;}
+.zibuoMainList li a:hover, .zibuoMainList .active a{ border-color: #dc3030; background-color: #dc3030; color: #fff;}
+.zibuoMainList li a:hover i, .zibuoMainList .active a i{ background-position: -200px 0;}
+.zibuoStartTimer, .inTroZibuo, .zibuoClass, .zibuoFrenTips{ margin-bottom: 10px;}
+.zibuoFrenTips p{ font-size: 14px;}
+.zibuoStartTimer .zibuoMainTitle, .zibuoClass .zibuoMainTitle, .zibuoFrenTips .zibuoMainTitle{ margin-bottom: 5px;}
+.sideTodayVideoList li span{display: block; width: 58px; height: 36px; line-height: 36px; text-align: center; font-size: 16px; background-color: #f2f2f2; position: absolute; left: 0; top: 14px;}
+.sideTodayVideoList li{ padding-left: 68px;}
+.specHeader .imgBox, .specHeader .imgBox a, .specHeader .imgBox img{ display: block; width: 170px;height: 231px;}
+/*********************专题*********************************************************/
+.specHeader{ padding-top: 22px; margin-bottom: 30px;}
+.specHeader .fr{ width: 452px;}
+.specHeaderTitle{ height: 40px; font-size: 32px; line-height: 40px; font-weight: normal; padding-top: 10px; margin-bottom: 10px;}
+.specHeaderTitle span{ color: #666; font-size: 12px; padding-left: 16px;}
+.specHeaderInfo{ line-height: 24px; height: 95px; overflow: hidden;}
+.specHeaderInfo dt{ float: left; width: 49px; height: 95px;}
+.specHeaderInfo dd{ color: #999999;}
+.specGaiLan .sideTitle h4{ padding: 0 33px;}
+.specGaiLanList li{ height: 40px; border: 1px solid #e1e1e1; border-radius: 4px; padding:0 16px; line-height: 40px; overflow: hidden; margin-bottom: 20px;}
+.specGaiLanList li span{ display: block; width: 88px;}
+.specGaiLanList li i{ display: block; width: 67px;}
+.specGaiLanList{ padding-top: 10px;}
+/*********************足球录像*********************************************************/
+.fooBallViTiNav li{ float: left; height: 22px; padding: 0 8px; margin-right: 14px; background-color: #f5f5f5; color: #f04848;}
+.fooBaViTabBox{ width: 100%; height: 75px; position: relative; background-color: #fafafa; margin-top: 13px;}
+.fooBaViTabBox .turnPrev,.fooBaViTabBox .turnNext{ width: 25px; height: 35px; background-color: #7d7d7d; position: absolute; top: 20px; cursor: pointer;}
+.fooBaViTabBox .turnPrev{ background-position: 6px -195px; left: 0;}
+.fooBaViTabBox .turnNext{ background-position: -44px -195px; right: 0;}
+.trunParentBox li .icon{ display: block; width: 28px; height: 30px; background-position: 0 0; position: absolute; left: 12px; top: 10px;}
+.trunParentBox{ width: 940px; margin: 0 auto; padding-top: 14px; position: relative; overflow: hidden; height: 60px;}
+.trunParentBox li{ width: 135px; padding: 0 2px 0 52px; border-right: 1px solid #dbdbdb; position: relative; line-height: 26px; float: left;}
+.trunParentBox li p{ height: 26px; overflow: hidden; font-size: 12px;}
+.trunParentBox li p strong, .trunParentBox li p i, .trunParentBox li p span{ float: left; display: block; height: 100%; overflow: hidden;}
+.trunParentBox li p span{ width: 40px;}
+.trunParentBox li p strong{ width: 60px; margin-right: 10px;}
+.trunParentBox li p i{ width: 20px;}
+.trunParentBox ul{ position: absolute; left: 0; top: 14px; width: 3000px;}
+.fooBaViXiala{ position: absolute; right: 0; top: -24px; width: 87px; height: 24px;}
+.fooBaViXiala .btn{ display: block; width: 87px; height: 24px; line-height: 24px; text-align: center; background-color: #fafafa;}
+.footerBallCon{ width: 347px;}
+.footerBallCon .imgBox, .footerBallCon .imgBox img{ height: 218px;}
+.footerBallConTitle{ height: 36px; line-height: 36px; font-size: 16px; overflow: hidden; width: 100%; font-weight: normal; margin-top: 20px;}
+.footerBallConTitle strong{ display: block; width: 58px; text-align: center; height: 100%; background-color: #dc3030; color: #fff; margin-right: 7px; float: left; font-weight: normal;}
+.footerBallRight{ width: 323px;}
+.footerSrcoll{ width: 345px; height: 191px; position: relative;}
+.footerSrcollrBtn .prevBtn, .footerSrcollrBtn .NextBtn{ display: block; width: 20px; height: 70px; border: 1px solid #e3e3e3; position: absolute; right: 0;}
+.footerSrcollrBtn .prevBtn{ top: 17px;}
+.footerSrcollrBtn .NextBtn{ top: 104px;}
+.footerSrcollrBtn .prevBtn i, .footerSrcollrBtn .NextBtn i{ display: block; width: 11px; height: 6px; margin: 28px auto 0;}
+.footerSrcollrBtn .prevBtn i{ background-position: -150px -200px;}
+.footerSrcollrBtn .NextBtn i{ background-position: -175px -200px;}
+.footerSrcoll .footerSrcollrBtn .noend .pre{ background-position: -175px -225px;}
+.footerSrcoll .footerSrcollrBtn .noend .net{ background-position: -150px -225px;}
+.footerSrcollBox{ width: 323px; height: 100%; position: relative; overflow: hidden;}
+.footerSrcollBox ul{ width: 100%; height: 1500px; position: absolute; left: 0; top: 0;}
+.footerSrcollBox li{ height: 32px; line-height: 32px; font-size: 12px; overflow: hidden; position: relative; *vertical-align: top;}
+.footerSrcollBox li .d-l, .footerSrcollBox li .d-r{ position: absolute; width: 110px; display: block; top: 0; overflow: hidden;}
+.footerSrcollBox li .d-l{ left: 10px;}
+.footerSrcollBox li .d-r{ right: 0px;}
+.footerSrcollBox li .d-timer{ display: block; width: 62px; text-align: center; margin: 0 auto; overflow: hidden;}
+.footerSrcollBox li img{ width: 20px; height: 20px; vertical-align: middle; margin-right: 8px; margin-top: -2px;}
+.footerBallListTitle{ border-top: 5px solid #dc3030; position: relative; height: 12px; margin-top: 10px;}
+.footerBallListTitle h4{ width: 95px; height: 22px; text-indent: -999999em; background-position: -300px -150px; background-color: #fff; position: absolute; left: 0; bottom: 6px;}
+.footerBallListD{ margin-right: -80px;}
+.footerBallListD li{ width: 290px; margin-right: 42px; padding-left: 14px; height: 36px; line-height: 36px; overflow: hidden; float: left; position: relative;}
+.footerBallListD li i{ display: block; width: 5px; height: 5px; overflow: hidden; background-position: -200px -100px; position: absolute; left: 0; top: 16px;}
+
+
+
+.p_re{ position: relative;}
+.p_re_9{ position: relative; z-index: 99;}
+.fixedNav{ width: 100%; height: 425px; margin: 0 auto; position: absolute; top: 940px; left: 0;}
+.fixedNav ul{ position: absolute; left: -125px; top: 0; width: 89px;}
+.fixedNav li{ width: 89px; height: 49px; text-align: center; font-size: 12px; background: #f2f2f2; color: #000; line-height: 20px; cursor: pointer; margin-bottom: 12px;}
+.fixedNav li b{ display: block; font-size: 14px; padding-top: 7px;}
+.fixedNav .active{ background: #dc3030; color: #fff;}
+
+
+
+
+/*2015-8-6*/
+.impEvent .n-online-title{ background: url(../bg/online.jpg) left top no-repeat;}
+.impEvent .n-online-list{ padding: 0; width: 528px; height: 109px; overflow: hidden;}
+.impEvent .n-online-list li{ width: 176px; padding: 0; margin: 0; height: 54px; border-right: 1px solid #ffc2c2; border-bottom: 1px solid #ffc2c2;}
+.impEvent .n-online-list ul{ width: 531px; padding: 0;}
+.impEvent .n-online-list ul a, .impEvent .n-online-list ul a img{ display: block; width: 100%; height: 100%;}
+.impEvent .n-online-list ul a:hover{ opacity: 0.5; filter: alpha(opacity=50);-webkit-transition-duration: 300ms;  -moz-transition-duration: 300ms; transition-duration: 300ms;}
+
+/*2015-8-7*/
+.n_header_search{ width: 528px; padding-top: 14px;}
+.n_header_search_warp{ height: 31px; border: 2px solid #dc3030; position: relative; padding-left: 37px; background: url(../bg/search.jpg) 8px center no-repeat; z-index: 999999;}
+.n_header_search_btn{ width: 98px; height: 31px; background: #dc3030; color: #fff; font-size: 16px; border: none; position: absolute; right: 0; top: 0;}
+.n_header_search_text{ width: 386px; height: 17px; line-height: 17px; padding: 7px 0; font-size: 12px; color: #999999; border: none 0;}
+.n_header_search_list{ background: #fff; position: absolute; left: 0; top: 31px; border: 1px solid #cccccc; width: 424px;}
+.n_header_search_list li{ height: 28px; line-height: 28px; font-size: 12px;}
+.n_header_search_list li a{ display: block; height: 100%; padding: 0 24px;}
+.n_header_search_list li a:hover{ background: #f8f8f8; color: #333;}
+.n_header_search_hot{ font-size: 12px; height: 20px; line-height: 20px; overflow: hidden; padding-left: 10px; padding-top: 10px;}
+.n_header_search_hot a{ float: left; margin-right: 8px;}
+body .todayPlay{ background: #fff;}
+body .todayPlay .n_side_tabNav{ padding-left: 0; height: 43px; line-height: 43px; overflow: hidden; background: #fafafa; margin-bottom: 6px;}
+body .todayPlay .n_side_tabNav span{ display: block; width: 105px; float: left; text-align: center; font-size: 18px;}
+body .todayPlay .n_side_tabNav .active{ border-top: 3px solid #dc3030; line-height: 36px; color: #333;}
+body .todayPlay .n_side_play_lists li{ position: relative; padding: 16px 63px 17px 58px; height: 36px; margin: 0; overflow: hidden; vertical-align: middle;}
+.n_p_time{ width: 58px; height: 33px; background: #f2f2f2; position: absolute; left: 0; top: 16px; padding-top: 3px}
+.n_p_time i{ display: block; text-align: center; line-height: 14px; font-size: 14px;}
+.n_p_play_btn{ position: absolute; right: 0; top: 16px; height: 36px; line-height: 36px; width: 63px; text-align: right;}
+.n_p_q_duiz i{ display: block; width: 18px; height: 13px; background: #dc3030; overflow: hidden;}
+/*.n_p_q_duiz{ height: 36px; background: url(../bg/vs.jpg)center no-repeat;}*/
+.n_p_q_duiz{ height: 36px; background-image: url(../bg/vs.jpg); background-position: center; background-repeat: no-repeat;}
+.n_p_q_duiz span{ display: block; height: 100%; line-height: 36px; font-size: 16px; color: #000000; overflow: hidden; width: 84px;}
+.n_p_q_duiz span a{ color: #000000;}
+.n_p_q_dui_l{float: left; text-align: right;}
+.n_p_q_dui_r{float: right; text-align: left;}
+
+body .nav{ padding-left: 0;}
+body .caPlayIng span{ width: 267px;}
+#bisaiTable .l2{ font-weight: bold;}
+.videoNoneIcon{ float: left; display: block; height: 45px; line-height: 45px; padding-left: 17px; font-size: 24px; font-weight: normal; color: #666666;}
+.videoPageData h4{ float: left;}
+.calendarHeader i, #bisaiTable .l5 i{ cursor: pointer;}
+#bisaiTable .l5 b{ display: none; cursor: pointer;}
+#bisaiTable td{ overflow: hidden; height: 51px;}
+#bisaiTable .l5{ font-size: 14px;}
+#bisaiTable .l5 em{ color: #d4d4d4;}
+.zIndex99{ position: relative; z-index: 99;}
+
+
+
+/*列表共用样式 */
+.playBtn01{ display: none; width: 20px; height: 26px; background-position: -250px -50px; position: absolute; left: 50%; top: 50%; margin-left: -10px; margin-top: -13px;}
+.soccerStars li, .team li{ float: left; font-size: 10px;}
+.soccerStars li img, .soccerStars li span, .team li img, .team li span, .footerBallCon .imgBox, .footerBallCon .imgBox img{ display: block; width: 100%;} 
+.soccerStars li a:hover img, .team li a:hover img, .imgInfoList li:hover img, .specHeader .imgBox:hover img{-webkit-transition-duration: 500ms; 
+    -moz-transition-duration: 500ms;
+    transition-duration: 500ms;
+    -webkit-transition-timing-function: cubic-bezier(0.19,1,.22,1);
+    -ms-transition-timing-function: cubic-bezier(0.19,1,.22,1);
+    transition-timing-function: cubic-bezier(0.19,1,.22,1);
+    -webkit-transform: scale(1.05,1.05);
+    -moz-transform: scale(1.05,1.05);
+    -ms-transform: scale(1.05,1.05);
+    -o-transform: scale(1.05,1.05);
+    transform: scale(1.05,1.05);
+    pointer-events: none;
+    opacity: .3;
+    pointer-events: none; }
+.soccerStars li a:hover span, .team li a:hover span, .imgInfoList li .imgBox, .specHeader .imgBox:hover a{background: hsla(0,0%,0%,1)}
+a:hover .playBtn01, .imgInfoList li:hover .playBtn01{ display: block;}
+.soccerStars li a, .team li a, .imgInfoList li .imgBox img{ display: block; width: 100%; height: 100%;}
+.soccerStars li b, .team li b{ font-weight: normal; display: block; height: 22px; line-height: 22px; overflow: hidden; text-align: center; padding-top: 2px;}
+/*circleOl*/
+.circleOl li{ height: 47px; border-bottom: 1px solid #f2f4f5; line-height: 47px; padding-left: 33px;}
+.circleOl li i{ display: block; width: 24px; height: 24px; background-position: -150px -100px; position: absolute; left: 0; top: 12px; text-align: center; line-height: 24px;}
+.circleOl .tops i{ background-position: -150px -50px; color: #fff;}
+
+.fooBallViTiNav li, .turnPrev, .turnNext, .sideTavNav span, .bannerBtn span, .tabNav span{ cursor: pointer;}
+
+.fooBaViTabBox, .footerSrcoll, .tabList, .navDrop, .d-none{ display: none;}
+.navDrop{ height: 0;}
+.sideBanner2{ margin-bottom: 30px;}
+.jijinList table .l3 a:hover, .videoPagePlayInfoCon a:hover{ text-decoration: underline;}
+.liveListTitle .todayNum b{ font-weight: normal;}
+.liveEdayList li b, .liveListTitle h3 i, .liveListTitle .todayNum b, .liveEdayList li a:hover, .liveEdayList li:hover .fl, #bisaiTable .l6 a:hover, #bisaiTable .l2 a:hover, .jijinList table .l2 a:hover, .imgInfoList li:hover a, .sideTavNav .active, .corpsItem li:hover a, .corpsItem li:hover, .sideMatch li:hover a, .qiuStarList li:hover a, .videoPagePlayInfoCon a,
+.sidePlayList li:hover a, .sideTodayVideoList li:hover a, .specHeaderInfo dd a, .footerSrcollBox li:hover, .footerSrcollBox li:hover a{ color: #dc3030;}
+.videoPageList .videoPageTaday h4, .tadayCorpsItem .corpsItemTitle h4, .sideTodayVideoList li:hover span, .specGaiLanList li:hover,.w1000 .fooBaViTabBox .noend,.w1000.fooBaViTabBox .noend, .fooBallViTiNav .active, .calendarDays .active{ background-color: #dc3030;}
+.videoPageList .videoPageTaday, .imgInfoList li:hover, .qiuStarList li:hover, .sidePlayList li:hover, .sideTodayVideoList li:hover, .specGaiLanList li:hover{ border-color: #dc3030;}
+.locah a, .jijinList table .l3 a{ color: #5188a6;}/*蓝*/
+.liveEdayList li a, #bisaiTable .l2 a, .jijinList table .l2 a, .corpsItem li, .corpsItem li a, .specGaiLanList li a{ color: #000;}
+.c-fen i, .c-fen b{ vertical-align: middle;}
+.c-fen i, .c-fen b{ font-family: 'Arial';}
+.c-fen i, .c-fen a, .liveEdayList, .circleOl li, #bisaiTable{ font-size: 14px;}
+.zibuoMain{ font-size: 16px;}
+.banner, .soccerStars li span, .team li span, .circleOl li, .imgInfoList li .imgBox, .specHeader .imgBox{ overflow: hidden; position: relative;}
+.nav li, .navDrop li, .banner ul li,.todayPlay .tabNav span,.todayPlay .tabNav i, .liveEdayList li b, .specGaiLanList li span, .specGaiLanList li i{ float: left;}
+.nav a, .navDrop a, .bannerbg, .todayPlayHeader, .todayPlayHeader .nextDay:hover, .sideTodayVideoList li:hover a span, .specGaiLanList li:hover a, .fooBallViTiNav .active, .calendarDays .active{ color: #fff;}
+.headerList, .footer, .liveLink{ font-size: 12px;}
+.headerList li img, .headerList li i, .headerList li span, .headerList li b, .imgBox, .imgBox img{ display: block;}
+.bannerBtn span, .bannerNum span, .todayPlayHeader .nextDay, .impEvent h4, .impEvent ul li i, .liveListTitle .todayNum, .liveListMainTitle h4, .liveEdayList li i, .playBtn01, .calendarHeader i, .circleOl li i, #bisaiTable .l5 a, #bisaiTable .l4 a, #bisaiTable .l3 a, #bisaiTable .l4 span, #bisaiTable .l5 span,
+#bisaiTable .l3 span, .corpsL, .corpsR, .qiuDuiIcon, .qiuStarTouX, .qiuStarList span b i, .sidePlayList li i, .zibuoMainList li a i, .fooBaViTabBox .turnPrev,.fooBaViTabBox .turnNext, .trunParentBox li .icon, .footerSrcollrBtn .prevBtn i, .footerSrcollrBtn .NextBtn i, .footerBallListTitle h4, .footerBallListD li i{ background-image: url(../bg/bg.png); background-repeat: no-repeat;}
+.quStarImg img{ width: 100%; height: 100%;}
+.videoNoneIcon{ float: left; display: block; height: 45px; line-height: 45px; padding-left: 17px; font-size: 24px; font-weight: normal; color: #666666;}
+.videoPageData h4{ float: left;}
+
+.videoNoneIcon{ float: left; display: block; height: 45px; line-height: 45px; padding-left: 17px; font-size: 24px; font-weight: normal; color: #666666;}
+.videoPageData h4{ float: left;}
+.quStarImg img{ width: 100%; height: 100%;}
+body .qiuStarTouX img{ left: 0;}
+body .todayPlay .n_side_tabNav .active{ background: #fff;}
+.n_p_q_duiz a:hover{ color: #dc3030;}
+body .corpsFix ul{ right:-85px;}
+body .todayPlay .tabList li{ border-bottom-color:#f3f3f3;}
+
+/*2015-8-17*/
+.quStarImg img{ width: 100%; height: 100%;}
+body .qiuStarTouX img{ left: 0;}
+body .todayPlay .n_side_tabNav .active{ background: #fff; height: 40px;}
+.n_p_q_duiz a:hover{ color: #dc3030;}
+body .corpsFix ul{ right:-85px;}
+body .todayPlay .tabList li{ border-bottom-color:#f3f3f3;}
+
+body .n_header_search_hot{ padding-left: 0; padding-top: 5px;}
+body .fixedNav{ top: 475px;}
+body .n_p_play_btn a{ color: #666666;}
+.n_p_play_btn a:hover{color: #dc3030;}
+body .qiuDui,body .qiuStar{ padding-right: 0;}
+body .quStarImg{ padding: 0; width: 130px; height: 130px;}
+body .qiuDui .qiuDuiName p{ height: auto; line-height: 16px; padding-top: 4px;}
+body .qiuDui .qiuDuiIcon img{ width: 150px; height: 150px;}
+body .qiuStarTouX img{ width: 186px; height: 150px;}
+body .n_p_q_duiz span{ font-size: 14px;}
+
+body .soccerStars li{ font-size: 14px;}
+.n_header_search_warp input{ font-family: '微软雅黑';}
+body .sideMatch li a.fl{ width: 260px;}
+body .sideMatch li span{ width: 50px;}
+body .qiuStarList li{ border-color: #e0e0e0;}
+body .qiuDuiIcon,body .qiuStarTouX{ margin-right: 60px;}
+body .qiuDuiName, .qiuDuiName{ width: 240px;}
+body .qiuDuiName h3{ font-size: 26px;}
+.videoListBiHeader td{ border: 1px solid #fff;}
+.videoListBiHeader tr:nth-child(2n+1) td{ background-color: #fafafa;}
+
+/*2015-8-22*/
+body .qiuDuiIcon{ padding-left: 10px;}
+.videoListBiHeader th{ text-indent: 20px;}
+.videoListName{ padding-left: 20px;}
+.allStarPage{ width: 100%;}
+.allStarPage li{ width: 184px; height: 154px; text-align: left; margin-right: 20px;}
+.allStarPage li span, .allStarPage li span img{ height: 103px;}
+.allStarPage li b{ text-align: left;}
+.allStarPage li strong{ position: absolute; right: 0; bottom: 0; color: #fff; font-size: 12px; display: block; padding-right: 4px; font-weight: normal;}
+.allStarPage{ margin-right: -40px;}
+.jijinIntro{ text-indent: 2em;}
+
+/*2015-8-24*/
+body .zibuoMainList li{ width: 300px;}
+body .sideTavNav{ padding-left: 36px;}
+body .jijinList table .l1{ width: 80px;}
+body .jijinList table .l2{ width: 425px;}
+
+/*2015-9-5*/
+body .liveLink .links{ width: 100%;}
+body .liveLink .links a{ margin-right: 15px;}
+/*404*/
+.zb8-404{ height: 403px; background: url(../bg/404.jpg) center no-repeat; margin: 78px auto 147px; width: 500px; position: relative;}
+.zb8-404-gohome, .zb8-404-prev{ display: block; width: 165px; height: 48px; position: absolute; bottom: 0; text-indent: -99999em;}
+.zb8-404-gohome{ left: 69px;}
+.zb8-404-prev{ right: 67px;}
+/*2015-9-8*/
+.side_ad{border:1px solid #ebebeb;overflow:hidden;margin:0 auto 10px auto;padding:10px;zoom:1}
+.paging{font-size:12px; text-align:center; line-height:28px; width: 660px;float: left;padding-top: 20px; padding-bottom: 20px; margin:auto;}
+.paging a{border:1px solid #e5e5e5; text-decoration:none; padding:7px 11px; margin-left:4px; background-color:#fff;}
+.paging a.current{background:#cc0000; border:1px solid #c00;color:#fff;}
+.paging a.nextPage{width:80px;}
+.paging a.points{background:transparent; font-size:12px; padding:0px; position:relative; border:none;}
+.paging a:hover{text-decoration:none; background-color:#c00;border:1px solid #c00;color:#fff;}
+.paging a.points:hover{background:transparent;color:#000000;}
+.zbtie {display:block;height:30px;line-height:24px;color:#666;}
+.zbtie h3 {float:left;font-size:12px;height:40px;margin-bottom:-1px;color:#666; }
+.zbtie span {float:right;font-size:12px;}
+.videoPagePlayBox img{width:648px;height:430px}#player-sidebar{margin-top:30px;background-color:#444;height:430px;overflow-y:auto;overflow-x:hidden}

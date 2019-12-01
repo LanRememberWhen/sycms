@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>[!--pagetitle--]</title>
+<meta name="keywords" content="[!--pagekey--]" />
+<meta name="description" content="[!--pagedes--]" />
+<link rel="stylesheet" href="[!--news.url--]skin/zb8/css/main.css">
+<script src="[!--news.url--]skin/zb8/js/jquery.js"></script>
+<script src="[!--news.url--]skin/zb8/js/jqScrollImg.js"></script>
+<script src="[!--news.url--]skin/zb8/js/main.js"></script>
+</head>
+<style>
+.breadcrumbs{display:inline;}
+</style>
+<body>
+<!--header-->
+[!--temp.head--]
+<!--navbox   end-->
+<script>
+$(function(){
+	$('#banner').jqScrollImg({
+		oUl: $('#banner ul'),		//无缝滚动的容器
+		oLi: $('#banner ul li'),	//容器内数列
+		oNext: $('#banner .next'),	//下一页按钮（选填）
+		oPrev: $('#banner .prev'),	//上一页按钮（选填）
+		oTtitle:$('#banner h3'),//标题
+		aNum: $('#banner .bannerNum span'),//索引
+		//oPage: $('#foucsImg .foucsPage'),//页码
+		//oPlay: $('#foucsImg .palyBtn'),//播放控制铵钮
+		times: 6000,	//是否自动播放，及播放间隔
+		runNum: 1,		//每次滚动的数量（选填）
+		timers: 500, //切换时间
+		oLeft : 'left'
+	});	
+	//星期导航
+	(function(){
+		var oDiv1=document.getElementById('fixedNav');	
+		var oDiv2=document.getElementById('indexMian');
+		var isIE6=false;
+		if(navigator.userAgent.indexOf('MSIE 6')!=-1){
+			isIE6=true;	
+		}else{
+			isIE6=false;	
+		}
+		var t=oDiv2.offsetTop;
+		window.onscroll=function(){
+			var scrollT=document.documentElement.scrollTop || document.body.scrollTop;
+			if(t<=scrollT){
+				if(isIE6){
+					oDiv1.style.position = 'absolute';
+					oDiv1.style.top = '875px';
+				}else{
+					oDiv1.style.position = 'fixed';
+					oDiv1.style.top = '200px';
+				}
+			}else{
+				oDiv1.style.position = 'absolute';
+				oDiv1.style.top = '875px';
+			}
+		}
+
+		setSrollWindow();
+
+		function setSrollWindow(){
+
+			var week7 = $("#n8_week7").offset().top;
+			var week6 = $("#n8_week6").offset().top;
+			var week5 = $("#n8_week5").offset().top;
+			var week4 = $("#n8_week4").offset().top;
+			var week3 = $("#n8_week3").offset().top;
+			var week2 = $("#n8_week2").offset().top;
+			var week1 = $("#n8_week1").offset().top;
+			var week7 = $("#n8_week7").offset().top;
+			$(window).scroll(function(){
+				var scroH = $(this).scrollTop();
+				//alert(week7);
+				if(scroH>=week7){
+					//console.log(scroH, week7);
+					set_cur(".n8_week7");
+				}else if(scroH>=week6){
+					//console.log(scroH, week6);
+					set_cur(".n8_week6");
+				}else if(scroH>=week5){
+					//console.log(scroH, week5);
+					set_cur(".n8_week5");
+				}else if(scroH>=week4){
+					//console.log(scroH, week4);
+					set_cur(".n8_week4");
+				}else if(scroH>=week3){
+					//console.log(scroH, week3);
+					set_cur(".n8_week3");
+				}else if(scroH>=week2){
+					//console.log(scroH, week2);
+					set_cur(".n8_week2");
+				}else if(scroH>=week1){
+					//console.log(scroH, week1);
+					set_cur(".n8_week1");
+				}
+			});
+			
+			$("#fixedNav li").click(function() {
+				var el = $(this).attr('class');
+		     	$('html, body').animate({
+		         	scrollTop: $("#"+el).offset().top
+		     	}, 300);
+				$(this).addClass("active").siblings().removeClass("active");	
+		 	});
+			function set_cur(n){
+				if($("#fixedNav li").hasClass("active")){
+					$("#fixedNav li").removeClass("active");
+				}
+				$("#fixedNav").find(n).addClass("active");
+			}
+		}		
+	})();
+});
+</script>
+<div class="hr hr14"></div>
+<div class="w1000 clearfix p_re_9">
+	<!--banner-->
+	<div class="fl banner" id="banner">
+		<ul class="clearfix">
+		[e:loop={2,4,13,1,'firsttitle=1'}]
+        	<li title="<?=$bqr['title']?>">
+        		<a target="_blank" href="<?=$bqsr['titleurl']?>">
+        			<img src="<?=$bqr['titlepic']?>" alt="<?=$bqr['title']?>">
+        		</a>
+        	</li>
+        [/e:loop]
+        </ul>
+		<div class="bannerbg">
+			<h3></h3>
+			<div class="bannerBtn">
+				<span class="prev"></span>
+				<span class="next"></span>
+			</div>
+		</div>
+		<div class="bannerNum">
+			<span class="active"></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+	</div>
+	<!--banner  end-->
+	<!--todayPlay-->
+	<div class="fr todayPlay">
+		<div class="tabNav n_side_tabNav">
+			<span class="active">热门直播</span>
+			<span>热门录像</span>
+		</div>
+		<ul class="tabList n_side_play_lists" style="display:block;">
+			[e:loop={59,6,0,0,'istop=1','id asc'}]
+        	<li>
+				<div class="n_p_time"><i><?=date('m-d',strtotime($bqr[playtime]))?></i><i><?=date('H:i',strtotime($bqr[playtime]))?></i></div>
+				<div class="n_p_q_duiz">
+                	<span class="n_p_q_dui_l"><?=$bqr['vstitle']?></span>
+					<span class="n_p_q_dui_r"><?=$bqr['vstitle1']?></span>
+                </div>
+				<div class="n_p_play_btn"><a target="_blank" href="<?=$bqsr[titleurl]?>">赛事直播</a></div>
+			</li>
+			[/e:loop]
+        </ul>
+		<ul class="tabList n_side_play_lists">
+        	[e:loop={61,6,2,0,'isgood=1','id asc'}]
+        	<li>
+				<div class="n_p_time"><i><?=date('m-d',strtotime($bqr[playtime]))?></i><i><?=date('H:i',strtotime($bqr[playtime]))?></i></div>
+				<div class="n_p_q_duiz">
+                	<span class="n_p_q_dui_l"><?=$bqr['vstitle']?></span>
+					<span class="n_p_q_dui_r"><?=$bqr['vstitle1']?></span>
+                </div>
+				<div class="n_p_play_btn"><a target="_blank" href="<?=$bqsr[titleurl]?>"><?=$bqsr[classname]?></a></div>
+			</li>
+			[/e:loop]
+        </ul>
+	</div>
+	<!--todayPlay  end-->
+</div>
+<div class="hr hr30"></div>
+<div class="fixedNav" id="fixedNav">
+	<div class="w1000 p_re">
+		<ul>
+			<li class="n8_week1 active"><b>今天</b><span><?php echo date('Y-m-d日 ');?></span></li>
+			<li class="n8_week2"><b><?php $week= array('日','一','二','三','四','五','六'); echo date("",strtotime("+1 day")).'星期'.$week[date('w',strtotime("+1 day"))];?></b><span><?php echo date("Y-m-d",strtotime("+1 day"));?></span></li>
+			<li class="n8_week3"><b><?php $week= array('日','一','二','三','四','五','六'); echo date("",strtotime("+2 day")).'星期'.$week[date('w',strtotime("+2 day"))];?></b><span><?php echo date("Y-m-d",strtotime("+2 day"));?></span></li>
+			<li class="n8_week4"><b><?php $week= array('日','一','二','三','四','五','六'); echo date("",strtotime("+3 day")).'星期'.$week[date('w',strtotime("+3 day"))];?></b><span><?php echo date("Y-m-d",strtotime("+3 day"));?></span></li>
+			<li class="n8_week5"><b><?php $week= array('日','一','二','三','四','五','六'); echo date("",strtotime("+4 day")).'星期'.$week[date('w',strtotime("+4 day"))];?></b><span><?php echo date("Y-m-d",strtotime("+4 day"));?></span></li>
+			<li class="n8_week6"><b><?php $week= array('日','一','二','三','四','五','六'); echo date("",strtotime("+5 day")).'星期'.$week[date('w',strtotime("+5 day"))];?></b><span><?php echo date("Y-m-d",strtotime("+5 day"));?></span></li>
+			<li class="n8_week7"><b><?php $week= array('日','一','二','三','四','五','六'); echo date("",strtotime("+6 day")).'星期'.$week[date('w',strtotime("+6 day"))];?></b><span><?php echo date("Y-m-d",strtotime("+6 day"));?></span></li>
+		</ul>		
+	</div>
+</div>
+<div class="w1000 clearfix p_re_9" id="indexMian">
+	<div class="w647">
+		<div class="impEvent clearfix">
+			<h4 class="fl n-online-title">在线直播</h4>
+			<div class="n-online-list fr">
+				<ul class="clearfix">
+					<li><a target="_blank" href="http://video.sina.com.cn/l/pl/sportstv/1698269.html"><img src="[!--news.url--]skin/zb8/images/23.jpg" alt=""></a></li>
+					<li><a target="_blank" href="http://tv.cntv.cn/live/cctv5"><img src="[!--news.url--]skin/zb8/images/24.jpg" alt=""></a></li>
+					<li><a target="_blank" href="http://sports.qq.com/"><img src="[!--news.url--]skin/zb8/images/25.jpg" alt=""></a></li>
+					<li><a target="_blank" href="http://v.baidu.com/live/bjty?qq-pf-to=pcqq.c2c"><img src="[!--news.url--]skin/zb8/images/26.jpg" alt=""></a></li>
+					<li><a target="_blank" href="http://v.baidu.com/live/cqws?qq-pf-to=pcqq.c2c"><img src="[!--news.url--]skin/zb8/images/27.jpg" alt=""></a></li>
+					<li><a target="_blank" href="http://v.baidu.com/live/gdty?qq-pf-to=pcqq.c2c"><img src="[!--news.url--]skin/zb8/images/28.jpg" alt=""></a></li>
+				</ul>				
+			</div>
+		</div>
+		<!--liveList-->
+		<div class="liveList">
+			<div class="liveListTitle">
+				<h3 class="fl"><i>直播</i>节目列表</h3>
+				<div class="fr todayNum" style="font-size:16px;">
+					今日更新 <b><?php $num=$empire->gettotal("select count(*) as total from phome_ecms_zhibo where classid in (59) and from_unixtime(newstime,'%Y-%m-%d')=curdate()"); echo $num; ?></b> 条
+				</div>
+			</div>
+			<div class="liveListMain">
+            	<div class="liveListMainTitle" id="n8_week1">
+					<h4>今天</h4><?php echo date('Y-m-d日 ');?>
+				</div>
+				<ul class="liveEdayList">
+					[e:loop={58,100,0,0,"from_unixtime(newstime,'%Y-%m-%d')=curdate()",'istop DESC,newstime ASC'}]
+            		<li>
+						<i></i>
+						<b><?=date('H:i', strtotime($bqr[playtime]))?></b>
+						<a target="_blank" href="<?=$bqr['titleurl']?>" class="fl" ><span>【<?=$bqsr[classname]?>】</span><?=esub($bqr[title],500)?></a>
+						<a target="_blank"  href="<?=$bqr['titleurl']?>" class="fr"><?=$bqr[topzbm]?></a>
+					</li>
+               		[/e:loop]   
+                </ul>
+				<div class="liveListMainTitle" id="n8_week2">
+					<h4><?php $week= array('日','一','二','三','四','五','六'); echo date("",strtotime("+1 day")).'星期'.$week[date('w',strtotime("+1 day"))];?></h4><?php echo date("Y-m-d",strtotime("+1 day"));?></span></div>
+				<ul class="liveEdayList">
+                	[e:loop={58,100,0,0,"from_unixtime(newstime,'%Y-%m-%d')=curdate() +INTERVAL 1 day",'istop DESC,newstime ASC'}]
+                	<li>
+						<i></i>
+						<b><?=date('H:i',$bqr[playtime])?></b>
+						<a target="_blank" href="<?=$bqr['titleurl']?>" class="fl" ><span>【<?=$bqsr[classname]?>】</span><?=esub($bqr[title],500)?></a>
+						<a target="_blank"  href="<?=$bqr['titleurl']?>" class="fr"><?=$bqr[topzbm]?></a>
+					</li>
+               		[/e:loop]   	
+                </ul>
+				<div class="liveListMainTitle" id="n8_week3">
+					<h4><?php $week= array('日','一','二','三','四','五','六'); echo date("",strtotime("+2 day")).'星期'.$week[date('w',strtotime("+2 day"))];?></h4><?php echo date("Y-m-d",strtotime("+2 day"));?></span>
+				</div>
+				<ul class="liveEdayList">
+                    [e:loop={58,100,0,0,"from_unixtime(newstime,'%Y-%m-%d')=curdate() +INTERVAL 2 day",'istop DESC,newstime ASC'}]
+                	<li>
+						<i></i>
+						<b><?=date('H:i',$bqr[playtime])?></b>
+						<a target="_blank" href="<?=$bqr['titleurl']?>" class="fl" ><span>【<?=$bqsr[classname]?>】</span><?=esub($bqr[title],500)?></a>
+						<a target="_blank"  href="<?=$bqr['titleurl']?>" class="fr"><?=$bqr[topzbm]?></a>
+					</li>
+               		[/e:loop]   	
+                </ul>
+				<div class="liveListMainTitle" id="n8_week4">
+					<h4><?php $week= array('日','一','二','三','四','五','六'); echo date("",strtotime("+3 day")).'星期'.$week[date('w',strtotime("+3 day"))];?></h4><?php echo date("Y-m-d",strtotime("+3 day"));?></span>
+				</div>
+				<ul class="liveEdayList">
+                    [e:loop={58,100,0,0,"from_unixtime(newstime,'%Y-%m-%d')=curdate() +INTERVAL 3 day",'istop DESC,newstime ASC'}]
+                	<li>
+						<i></i>
+						<b><?=date('H:i',$bqr[playtime])?></b>
+						<a target="_blank" href="<?=$bqr['titleurl']?>" class="fl" ><span>【<?=$bqsr[classname]?>】</span><?=esub($bqr[title],500)?></a>
+						<a target="_blank"  href="<?=$bqr['titleurl']?>" class="fr"><?=$bqr[topzbm]?></a>
+					</li>
+               		[/e:loop]   	
+                </ul>
+				<div class="liveListMainTitle" id="n8_week5">
+					<h4><?php $week= array('日','一','二','三','四','五','六'); echo date("",strtotime("+4 day")).'星期'.$week[date('w',strtotime("+4 day"))];?></h4><?php echo date("Y-m-d",strtotime("+4 day"));?></span>
+				</div>
+				<ul class="liveEdayList">
+                    [e:loop={58,100,0,0,"from_unixtime(newstime,'%Y-%m-%d')=curdate() +INTERVAL 4 day",'istop DESC,newstime ASC'}]
+                	<li>
+						<i></i>
+						<b><?=date('H:i',$bqr[playtime])?></b>
+						<a target="_blank" href="<?=$bqr['titleurl']?>" class="fl" ><span>【<?=$bqsr[classname]?>】</span><?=esub($bqr[title],500)?></a>
+						<a target="_blank"  href="<?=$bqr['titleurl']?>" class="fr"><?=$bqr[topzbm]?></a>
+					</li>
+               		[/e:loop]   	   
+                </ul>
+				<div class="liveListMainTitle" id="n8_week6">
+					<h4><?php $week= array('日','一','二','三','四','五','六'); echo date("",strtotime("+5 day")).'星期'.$week[date('w',strtotime("+5 day"))];?></h4><?php echo date("Y-m-d",strtotime("+5 day"));?></span>
+				</div>
+				<ul class="liveEdayList">
+                	[e:loop={58,100,0,0,"from_unixtime(newstime,'%Y-%m-%d')=curdate() +INTERVAL 5 day",'istop DESC,newstime ASC'}]
+                	<li>
+						<i></i>
+						<b><?=date('H:i',$bqr[playtime])?></b>
+						<a target="_blank" href="<?=$bqr['titleurl']?>" class="fl" ><span>【<?=$bqsr[classname]?>】</span><?=esub($bqr[title],500)?></a>
+						<a target="_blank"  href="<?=$bqr['titleurl']?>" class="fr"><?=$bqr[topzbm]?></a>
+					</li>
+               		[/e:loop]   	
+                </ul>
+				<div class="liveListMainTitle" id="n8_week7">
+					<h4><?php $week= array('日','一','二','三','四','五','六'); echo date("",strtotime("+6 day")).'星期'.$week[date('w',strtotime("+6 day"))];?></h4><?php echo date("Y-m-d",strtotime("+6 day"));?></span>
+				</div>
+				<ul class="liveEdayList">
+                	[e:loop={58,100,0,0,"from_unixtime(newstime,'%Y-%m-%d')=curdate() +INTERVAL 6 day",'istop DESC,newstime ASC'}]
+                	<li>
+						<i></i>
+						<b><?=date('H:i',$bqr[playtime])?></b>
+						<a target="_blank" href="<?=$bqr['titleurl']?>" class="fl" ><span>【<?=$bqsr[classname]?>】</span><?=esub($bqr[title],500)?></a>
+						<a target="_blank"  href="<?=$bqr['titleurl']?>" class="fr"><?=$bqr[topzbm]?></a>
+					</li>
+               		[/e:loop]   	
+                </ul>
+			</div>
+		</div>
+		<!--liveList  end-->
+	</div>
+	<div class="w323 ov ">
+		<!--NBA球星视频-->
+		<div class="sideTitle">
+			<h4 class="fl">NBA视频</h4>
+			<a target="_blank" href="/nbashipin/" class="more fr">MORE ></a>
+		</div>
+		<ul class="team clearfix">
+		    [e:loop={61,8,0,1}]    
+			<li>
+				<a target="_blank" href="<?=$bqsr[titleurl]?>">
+					<span><img src="<?=$bqr[titlepic]?>" alt="<?=esub($bqr[title],46)?>"><i class="playBtn01"></i></span>
+					<b><?=esub($bqr[title],46)?></b>
+				</a>
+			</li>
+            [/e:loop]
+        </ul>
+        <!--NBA球星视频  end-->
+		<div class="hr hr10"></div>
+		<div class="side_ad" style="margin:0 auto 0 auto"><script src="/d/js/acmsd/thea1.js"></script></div>
+        <div class="hr hr10"></div>
+		<div class="hr hr10"></div>
+		<!--NBA球队视频-->
+		<div class="sideTitle">
+			<h4 class="fl">NBA录像</h4>
+			<a target="_blank" href="/nbaluxiang/" class="more fr">MORE ></a>
+		</div>
+		<ul class="team clearfix">
+		    [e:loop={61,8,0,1}]    
+			<li>
+				<a target="_blank" href="<?=$bqsr[titleurl]?>">
+					<span><img src="<?=$bqr[titlepic]?>" alt="<?=esub($bqr[title],46)?>"><i class="playBtn01"></i></span>
+					<b><?=esub($bqr[title],46)?></b>
+				</a>
+			</li>
+            [/e:loop]    
+        </ul>
+        <!--NBA球队视频  end-->
+		<div class="hr hr10"></div>
+		<div class="side_ad" style="margin:0 auto 0 auto"><script src="/d/js/acmsd/thea2.js"></script></div>
+        <div class="hr hr10"></div>
+		<!--足球球星视频-->
+		<div class="sideTitle">
+			<h4 class="fl">足球视频</h4>
+			<a target="_blank" href="/zuqiushipin/" class="more fr">MORE ></a>
+		</div>
+		<ul class="team clearfix">
+		    [e:loop={7,8,0,1}]    
+			<li>
+				<a target="_blank" href="<?=$bqsr[titleurl]?>">
+					<span><img src="<?=$bqr[titlepic]?>" alt="<?=esub($bqr[title],46)?>"><i class="playBtn01"></i></span>
+					<b><?=esub($bqr[title],46)?></b>
+				</a>
+			</li>
+            [/e:loop]    
+                    
+		</ul>
+		<!--足球球星视频  end-->
+		<div class="hr hr10"></div>
+		<div class="side_ad" style="margin:0 auto 0 auto"><script src="/d/js/acmsd/thea3.js"></script></div>
+        <div class="hr hr10"></div>
+		<!--NBA专题-->
+		<div class="sideTitle">
+			<h4 class="fl">足球录像</h4>
+			<a target="_blank" href="/zhuanti/lanqiu/" class="more fr">MORE ></a>
+		</div>
+		<ul class="team clearfix">
+		    [e:loop={7,8,0,1}]    
+			<li>
+				<a target="_blank" href="<?=$bqsr[titleurl]?>">
+					<span><img src="<?=$bqr[titlepic]?>" alt="<?=esub($bqr[title],46)?>"><i class="playBtn01"></i></span>
+					<b><?=esub($bqr[title],46)?></b>
+				</a>
+			</li>
+            [/e:loop]    
+		</ul>
+		<!--NBA专题  end-->
+		<div class="hr hr10"></div>
+		<div class="side_ad" style="margin:0 auto 0 auto"><script src="/d/js/acmsd/thea4.js"></script></div>
+        <div class="hr hr10"></div>
+		<!--NBA专题-->
+		<div class="sideTitle">
+			<h4 class="fl">体坛图库</h4>
+			<a target="_blank" href="/tuku/" class="more fr">MORE ></a>
+		</div>
+		<ul class="team clearfix">
+		    [e:loop={7,8,0,1}]    
+			<li>
+				<a target="_blank" href="<?=$bqsr[titleurl]?>">
+					<span><img src="<?=$bqr[titlepic]?>" alt="<?=esub($bqr[title],46)?>"><i class="playBtn01"></i></span>
+					<b><?=esub($bqr[title],46)?></b>
+				</a>
+			</li>
+            [/e:loop]    
+		</ul>
+		<!--NBA专题  end-->
+		<div class="hr hr10"></div>
+		<div class="side_ad" style="margin:0 auto 0 auto"><script src="/d/js/acmsd/thea5.js"></script></div>
+        <div class="hr hr10"></div>
+		<!--NBA专题-->
+		<div class="w323 j-side">
+		<div class="sideTitle">
+			<h4 class="fl">体坛资讯</h4>
+			<a target="_blank" href="/news/" class="more fr">MORE ></a>
+		</div>
+		<ul class="circleOl">
+         [e:loop={62,3,0,0}] 
+         <li class="tops"><i><?=$bqno?></i><a target="_blank" href="<?=$bqsr[titleurl]?>"><?=$bqr['title']?></a></li>
+         [/e:loop]
+		 [e:loop={62,'3,7',0,0}]
+          <li ><i><?=$bqno+3?></i><a target="_blank" href="<?=$bqsr[titleurl]?>"><?=$bqr['title']?></a></li>
+         [/e:loop]
+        </ul>        
+		</div>
+		<div class="hr hr10"></div>
+		<div class="side_ad" style="margin:0 auto 0 auto"><script src="/d/js/acmsd/thea6.js"></script></div>
+        <div class="hr hr10"></div>
+	</div>
+</div>
+<!--友情连接-->
+<div class="liveLink">
+	<div class="clearfix w1000 p_re_9">
+		<div class="links lh_24">
+			<h4 class="liveLinkTitle fs14"><b>友情连接</b>Links >></h4>
+			<p class="">
+				[e:loop={'select * from [!db.pre!]enewslink where checked=1 and lpic="" order by lid',100,24,0}]
+				<a href='<?=$bqr[lurl]?>' target='_blank'><?=$bqr[lname]?></a>
+				[/e:loop]
+			</p>
+		</div>
+	</div>
+</div>
+<!--友情连接 end-->
+[!--temp.foot--]
+<div class="fixeds corpsFix">
+	<div class="w1000">
+		<ul>
+			<li class="active" id="fixGoTop">返回<br>顶部</li>
+			<li id="fixAddMark">加入<br>书签</li>
+		</ul>
+	</div>
+</div>
+</body>
+</html>

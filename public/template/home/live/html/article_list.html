@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>{$title}-{$system.name}</title>
+	<meta name="keywords" content="{$keywords}" />
+	<meta name="description" content="{$description}" />
+	<link rel="stylesheet" href="{$public}css/main.css">
+	<script src="{$public}js/jquery.js"></script>
+	<script src="{$public}js/jqScrollImg.js"></script>
+	<script src="{$public}js/main.js"></script>
+</head>
+<style>
+    .breadcrumbs {
+        display: inline;
+    }
+</style>
+
+<body>
+    {include file="common/header"/}
+    <div class="hr hr20"></div>
+    <div class="w1000 qxjjPages">
+        <div class="locah locah2">
+            <span>当前位置：</span>
+            <div class="breadcrumbs"><a href="/">首页</a> > <a href="{tp:cate type='url'/}">{tp:cate type='catname'/}</div>
+        </div>
+        <div class="hr hr30"></div>
+        <div class="clearfix w1000">
+            <div class="w647 ov">
+                <div class="videoPageList">
+                    <div class="videoPageData videoPageTaday">
+                        <h4>{$title}</h4>
+                    </div>
+                </div>
+                <ul class="clearfix footerBallListD">
+                    {tp:list name="list"}
+					<li>
+                        <i></i>
+						<a href="{$list.url}">{$list.title}</a>
+					</li>
+					{/tp:list}
+                </ul>
+                <div class="paging">{$page|raw}</div>
+            </div>
+            <div class="w323 j-side">
+                <div class="sideTitle">
+                    <h4 class="fl">热门资讯</h4>
+                </div>
+                <ul class="circleOl">
+                    {tp:list name="list" limit="10" order="hits"}
+                    <li class="tops"><i>{$key+1}</i><a href="{$list.title}">{$list.title}</a></li>
+                    {/tp:list}
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="hr hr60"></div>
+    {include file="common/footer"/}
+</body>
+
+</html>

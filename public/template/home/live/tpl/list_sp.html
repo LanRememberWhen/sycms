@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>[!--pagetitle--]</title>
+<meta name="keywords" content="[!--pagekey--]" />
+<meta name="description" content="[!--pagedes--]" />
+<link rel="stylesheet" href="[!--news.url--]skin/zb8/css/main.css">
+<script src="[!--news.url--]skin/zb8/js/jquery.js"></script>
+<script src="[!--news.url--]skin/zb8/js/jqScrollImg.js"></script>
+<script src="[!--news.url--]skin/zb8/js/main.js"></script>
+</head>
+<style>
+.breadcrumbs{display:inline;}
+</style>
+<body>
+[!--temp.head--]
+<div class="hr hr20"></div>
+<div class="w1000 qxjjPages">
+	<div class="locah locah2">
+		<span>当前位置：</span>
+		<div class="breadcrumbs">[!--newsnav--]</div>
+	</div>
+	<div class="hr hr20"></div>
+	<div class="w1000">
+		<div class="w647 ov">
+			<div class="sideTitle">
+				<h4 class="fl">[!--class.name--]</h4>
+			</div>
+			<ul class="clearfix soccerStars">
+    			[!--empirenews.listtemp--]
+                <!--list.var1-->
+                [!--empirenews.listtemp--]
+    		</ul>
+			<div class="paging">[!--show.listpage--]</div>
+		</div>
+		<div class="w323 j-side">
+			<script src="/js/acmsd/thea1.js"></script>
+			<div class="sideTitle">
+				<h4 class="fl">热门视频</h4>
+			</div>
+			<ul class="imgInfoList">
+			  	[e:loop={'selfinfo',6,1,1}] 
+				<li>
+					<a target="_blank" href="<?=$bqsr[titleurl]?>" class="imgBox"><img src="<?=$bqr[titlepic]?>" alt="<?=$bqr['title']?>"><i class="playBtn01"></i></a>
+					<a target="_blank" href="<?=$bqsr[titleurl]?>" class="imgTitle"><?=$bqr['title']?></a>
+					<div><span><?=date('m-d', $bqr[newstime])?></span></div>
+				</li>
+	        	[/e:loop]
+	        </ul>
+			<script src="/js/acmsd/thea2.js"></script>
+        </div>
+	</div>
+</div>
+<div class="hr hr60"></div>
+[!--temp.foot--]
+</body>
+</html>

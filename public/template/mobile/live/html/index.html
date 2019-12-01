@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{$system.name}</title>
+    <meta name="keywords" content="{$keywords}" />
+    <meta name="description" content="{$description}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta content="email=no,telephone=no" name="format-detection">
+    <link rel="stylesheet" href="{$public}css/main.css">
+    <script type="text/javascript" src="{$public}js/jquery.js"></script>
+    <script type="text/javascript" src="{$public}js/main.js"></script>
+    <script type="text/javascript" src="{$public}js/idangerous.Swiper.js"></script>
+</head>
+
+<body>
+    {include file="common/header"/}
+    <div class="focus banner swiper-container" id="focus">
+        <ul id="foucsBox" class="swiper-wrapper">
+                {tp:list limit="9" id="23" where="litpic <> ''"}
+            <li class="swiper-slide"><a href="{$list.url}"><img src="{$list.litpic}" alt="{$list.title}">{$list.title}</a></li>
+            {/tp:list}
+        </ul>
+        <div class="foucsNum bannerNum my-pagination" id="foucsNum"></div>
+    </div>
+    <ul class="banDuiz">
+    </ul>
+    <div class="index-playing">
+        <div class="conTitle">
+            <h4><i></i>直播</h4>
+        </div>
+        <ul>
+            <li><a href="javascript:;">全部</a></li>
+            <li><a href="/zblist.php?cid=3">NBA直播</a></li>
+            <li><a href="/zblist.php?cid=2">足球直播</a></li>
+            <li><a href="/zblist.php?cid=4">其他直播</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="playDayWeek">
+            <div class="palyDayWeekWrap clockContent">
+                <div class="playDayTitle">今天</div>
+                <ul class="playDayWeekList">
+                    {tp:list id="21" name="list" order="livetime ASC" where="from_unixtime(livetime,'%Y-%m-%d')=curdate()"}
+		            <li><a href="{$list.url}"><i>在线直播</i><time>{$list.livetime|date="H:i"}</time><span>{$list.shorttitle}</span></a></li>
+                    {/tp:list}
+                </ul>
+            </div>
+            <div class="palyDayWeekWrap clockContent">
+                <div class="playDayTitle">{$secondweek}{$seconddate}</div>
+                <ul class="playDayWeekList">
+                    {tp:list id="21" name="list" order="livetime ASC" where="from_unixtime(livetime,'%Y-%m-%d')=curdate() +INTERVAL 1 day"}
+                    <li><a href="{$list.url}"><i>在线直播</i><time>{$list.livetime|date="H:i"}</time><span>{$list.shorttitle}</span></a></li>
+                    {/tp:list}
+                </ul>
+            </div>
+            <div class="palyDayWeekWrap clockContent">
+                <div class="playDayTitle">{$threeweek}{$threedate}</div>
+                <ul class="playDayWeekList">
+                    {tp:list id="21" name="list" order="livetime ASC" where="from_unixtime(livetime,'%Y-%m-%d')=curdate() +INTERVAL 2 day"}
+                    <li><a href="{$list.url}"><i>在线直播</i><time>{$list.livetime|date="H:i"}</time><span>{$list.shorttitle}</span></a></li>
+                    {/tp:list}
+                </ul>
+            </div>
+            <div class="palyDayWeekWrap clockContent">
+                <div class="playDayTitle"></div>
+                <ul class="playDayWeekList">
+                </ul>
+            </div>
+            <a href="javascript:;" class="clockMore" id="clockMore">查看更多赛事</a>
+        </div>
+    </div>
+    <div class="imgList-02 content-02">
+        <div class="conTitle">
+            <h4><i></i>篮球视频</h4>
+            <a href="/nbashipin/" class="more">查看更多</a>
+        </div>
+        <ul>
+            {tp:list limit="9" id="23" where="litpic <> ''"}
+		    <li><a href="{$list.url}"><img width="217px;"height="123px;" src="{$list.litpic}" alt="{$list.title}"><span>{$list.title}</span>
+            {/tp:list}
+        </ul>
+    </div>
+    <div class="imgList-02 content-02">
+        <div class="conTitle">
+            <h4><i></i>篮球录像</h4>
+            <a href="/nbaluxiang/" class="more">查看更多</a>
+        </div>
+        <ul>
+            {tp:list limit="9" id="23" where="litpic <> ''"}
+            <li><a href="{$list.url}"><img width="217px;"height="123px;" src="{$list.litpic}" alt="{$list.title}"><span>{$list.title}</span>
+            {/tp:list}
+        </ul>
+    </div>
+    <div class="imgList-02 content-02">
+        <div class="conTitle">
+            <h4><i></i>足球视频</h4>
+            <a href="/zuqiushipin/" class="more">查看更多</a>
+        </div>
+        <ul>
+            {tp:list limit="9" id="23" where="litpic <> ''"}
+            <li><a href="{$list.url}"><img width="217px;"height="123px;" src="{$list.litpic}" alt="{$list.title}"><span>{$list.title}</span>
+            {/tp:list}
+        </ul>
+    </div>
+    <div class="imgList-02 content-02">
+        <div class="conTitle">
+            <h4><i></i>足球录像</h4>
+            <a href="/zhuanti/lanqiu/" class="more">查看更多</a>
+        </div>
+        <ul>
+            {tp:list limit="9" id="23" where="litpic <> ''"}
+            <li><a href="{$list.url}"><img width="217px;"height="123px;" src="{$list.litpic}" alt="{$list.title}"><span>{$list.title}</span>
+            {/tp:list}
+        </ul>
+    </div>
+    </section>
+    <script>
+        var mySwiper = new Swiper('.swiper-container', {
+            mode: 'horizontal',//自由模式运动方向
+            loop: true,//循环模式
+            autoplay: 5000,//自动播放时间
+            autoplayDisableOnInteraction: false,//用户操作后是否自动播放，默认为false
+            //loopAdditionalSlides:2 没懂
+            //initialSlide：3
+            pagination: '.my-pagination',
+            followFinger: false,
+            grabCursor: true,
+            createPagination: true,
+            //paginaClickable:true 没懂
+            //等等..
+        });
+        clockMore('.clockContent', '#clockMore', 2);
+    </script>
+    {include file="common/footer"}
+</body>
+
+</html>

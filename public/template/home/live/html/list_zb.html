@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>[!--pagetitle--]</title>
+<meta name="keywords" content="[!--pagekey--]" />
+<meta name="description" content="[!--pagedes--]" />
+<link rel="stylesheet" href="[!--news.url--]skin/ddzb/css/main.css">
+<script src="[!--news.url--]skin/ddzb/js/jquery.js"></script>
+<script src="[!--news.url--]skin/ddzb/js/jqScrollImg.js"></script>
+<script src="[!--news.url--]skin/ddzb/js/main.js"></script>
+</head>
+<style>
+.breadcrumbs{display:inline;}
+</style>
+<body>
+[!--temp.head--]
+<div class="hr hr30"></div>
+<div class="w1000 clearfix zIndex99">
+	<div class="w647">
+		<div class="locah locah2">
+			<span>当前位置：</span>
+			<div class="breadcrumbs">[!--newsnav--] </div>
+		</div>
+		<h2 class="videoPageTitle">[!--class.name--]节目列表</h2>
+		<div class="videoPageList">
+        	<div class="videoPageData videoPageTaday">
+				<h4><?php echo date('m.d');?><i>今天</i></h4>
+            </div>
+			<ul class="liveEdayList">
+			 	[e:loop={'selfinfo',100,0,0,"from_unixtime(newstime,'%Y-%m-%d')=curdate()",'istop DESC,newstime ASC'}]
+            	<li>
+					<b><?=date('H:i',$bqr[newstime])?></b>
+					<a target="_blank" href="<?=$bqr['titleurl']?>" class="fl" ><?=esub($bqr[title],500)?></a>
+					
+				</li>
+				[/e:loop] 
+    		</ul>
+        	<div class="videoPageData videoPageTaday">
+				<h4><?php echo date("m.d",strtotime("+1 day"));?><i><?php $week= array('日','一','二','三','四','五','六'); echo date("",strtotime("+1 day")).'星期'.$week[date('w',strtotime("+1 day"))];?></i></h4>
+            </div>
+			<ul class="liveEdayList">
+            	[e:loop={'selfinfo',100,0,0,"from_unixtime(newstime,'%Y-%m-%d')=curdate() +INTERVAL 1 day",'istop DESC,newstime ASC'}]
+                <li>
+					<b><?=date('H:i',$bqr[newstime])?></b>
+					<a target="_blank" href="<?=$bqr['titleurl']?>" class="fl" ><?=esub($bqr[title],500)?></a>
+					
+				</li>
+               [/e:loop]   	
+            </ul>
+        	<div class="videoPageData videoPageTaday">
+				<h4><?php echo date("m.d",strtotime("+2 day"));?><i><?php $week= array('日','一','二','三','四','五','六'); echo date("",strtotime("+2 day")).'星期'.$week[date('w',strtotime("+2 day"))];?></i></h4>
+            </div>
+			<ul class="liveEdayList">
+            	[e:loop={'selfinfo',100,0,0,"from_unixtime(newstime,'%Y-%m-%d')=curdate() +INTERVAL 2 day",'istop DESC,newstime ASC'}]
+                <li>
+					<b><?=date('H:i',$bqr[newstime])?></b>
+					<a target="_blank" href="<?=$bqr['titleurl']?>" class="fl" ><?=esub($bqr[title],500)?></a>
+					
+				</li>
+               [/e:loop]   	
+            </ul>
+        	<div class="videoPageData videoPageTaday">
+				<h4><?php echo date("m.d",strtotime("+3 day"));?><i><?php $week= array('日','一','二','三','四','五','六'); echo date("",strtotime("+3 day")).'星期'.$week[date('w',strtotime("+3 day"))];?></i></h4>
+            </div>
+			<ul class="liveEdayList">
+            	[e:loop={'selfinfo',100,0,0,"from_unixtime(newstime,'%Y-%m-%d')=curdate() +INTERVAL 3 day",'istop DESC,newstime ASC'}]
+                <li>
+					<b><?=date('H:i',$bqr[newstime])?></b>
+					<a target="_blank" href="<?=$bqr['titleurl']?>" class="fl" ><?=esub($bqr[title],500)?></a>
+					
+				</li>
+               [/e:loop]   	
+            </ul>
+        	<div class="videoPageData videoPageTaday">
+				<h4><?php echo date("m.d",strtotime("+4 day"));?><i><?php $week= array('日','一','二','三','四','五','六'); echo date("",strtotime("+4 day")).'星期'.$week[date('w',strtotime("+4 day"))];?></i></h4>
+            </div>
+			<ul class="liveEdayList">
+            	[e:loop={'selfinfo',100,0,0,"from_unixtime(newstime,'%Y-%m-%d')=curdate() +INTERVAL 4 day",'istop DESC,newstime ASC'}]
+                <li>
+					<b><?=date('H:i',$bqr[newstime])?></b>
+					<a target="_blank" href="<?=$bqr['titleurl']?>" class="fl" ><?=esub($bqr[title],500)?></a>
+					
+				</li>
+               [/e:loop]   	   
+            </ul>
+        	<div class="videoPageData videoPageTaday">
+				<h4><?php echo date("m.d",strtotime("+5 day"));?><i><?php $week= array('日','一','二','三','四','五','六'); echo date("",strtotime("+5 day")).'星期'.$week[date('w',strtotime("+5 day"))];?></i></h4>
+            </div>
+			<ul class="liveEdayList">
+            	[e:loop={'selfinfo',100,0,0,"from_unixtime(newstime,'%Y-%m-%d')=curdate() +INTERVAL 5 day",'istop DESC,newstime ASC'}]
+                <li>
+					<b><?=date('H:i',$bqr[newstime])?></b>
+					<a target="_blank" href="<?=$bqr['titleurl']?>" class="fl" ><?=esub($bqr[title],500)?></a>
+					
+				</li>
+               [/e:loop]   	
+            </ul>
+        	<div class="videoPageData videoPageTaday">
+				<h4><?php echo date("m.d",strtotime("+6 day"));?><i><?php $week= array('日','一','二','三','四','五','六'); echo date("",strtotime("+6 day")).'星期'.$week[date('w',strtotime("+6 day"))];?></i></h4>
+            </div>
+			<ul class="liveEdayList">
+            	[e:loop={'selfinfo',100,0,0,"from_unixtime(newstime,'%Y-%m-%d')=curdate() +INTERVAL 6 day",'istop DESC,newstime ASC'}]
+                <li>
+					<b><?=date('H:i',$bqr[newstime])?></b>
+					<a target="_blank" href="<?=$bqr['titleurl']?>" class="fl" ><?=esub($bqr[title],500)?></a>
+					
+				</li>
+               [/e:loop]
+           	</ul>
+        </div>
+	</div>
+	<div class="w323 j-side">
+		<script src="/d/js/acmsd/thea1.js"></script>
+		<div class="hr hr30"></div>
+		<div class="sideTitle">
+			<h4 class="fl">热门视频</h4>
+		</div>
+		<ul class="imgInfoList">
+		  	[e:loop={'11,12,16,17,23,24,25,28',6,1,1}]
+			<li>
+				<a target="_blank" href="<?=$bqsr[titleurl]?>" class="imgBox"><img src="<?=$bqr[titlepic]?>" alt="<?=$bqr['title']?>"><i class="playBtn01"></i></a>
+				<a target="_blank" href="<?=$bqsr[titleurl]?>" class="imgTitle"><?=$bqr['title']?></a>
+			</li>
+	    	[/e:loop]
+	    </ul>
+		<div class="hr hr30"></div>
+		<script src="/d/js/acmsd/thea2.js"></script>
+		<div class="hr hr30"></div>
+		<div class="sideTitle">
+			<h4 class="fl">最新资讯</h4>
+		</div>
+		<div class="sideTavNav">
+			<span class="active">全部</span>
+			<i>|</i>
+			<span>足球</span>
+			<i>|</i>
+			<span>篮球</span>
+			<i>|</i>
+			<span>其他</span>
+		</div>
+        <ul class="circleOl d-none" style="display:block;">
+	    	[e:loop={'13,18,26,27',3,0,0}] 
+	     	<li class="tops"><i><?=$bqno?></i><a target="_blank" href="<?=$bqsr[titleurl]?>"><?=$bqr['title']?></a></li>
+	     	[/e:loop]
+		 	[e:loop={'13,18,26,27','3,7',0,0}]
+	      	<li ><i><?=$bqno+3?></i><a target="_blank" href="<?=$bqsr[titleurl]?>"><?=$bqr['title']?></a></li>
+	     	[/e:loop]
+	    </ul>
+	    <ul class="circleOl d-none" style="display:none;">
+	    	[e:loop={13,3,0,0}] 
+	     	<li class="tops"><i><?=$bqno?></i><a target="_blank" href="<?=$bqsr[titleurl]?>"><?=$bqr['title']?></a></li>
+	     	[/e:loop]
+			[e:loop={13,'3,7',0,0}]
+	        <li ><i><?=$bqno+3?></i><a target="_blank" href="<?=$bqsr[titleurl]?>"><?=$bqr['title']?></a></li>
+	        [/e:loop]
+	    </ul>
+	    <ul class="circleOl d-none" style="display:none;">
+	    	[e:loop={'26,27',3,0,0}] 
+	     	<li class="tops"><i><?=$bqno?></i><a target="_blank" href="<?=$bqsr[titleurl]?>"><?=$bqr['title']?></a></li>
+	     	[/e:loop]
+		 	[e:loop={'26,27','3,7',0,0}]
+	      	<li ><i><?=$bqno+3?></i><a target="_blank" href="<?=$bqsr[titleurl]?>"><?=$bqr['title']?></a></li>
+	     	[/e:loop]
+	    </ul>
+	    <ul class="circleOl d-none" style="display:none;">
+	    	[e:loop={18,3,0,0}] 
+	     	<li class="tops"><i><?=$bqno?></i><a target="_blank" href="<?=$bqsr[titleurl]?>"><?=$bqr['title']?></a></li>
+	     	[/e:loop]
+		 	[e:loop={18,'3,7',0,0}]
+	     	<li ><i><?=$bqno+3?></i><a target="_blank" href="<?=$bqsr[titleurl]?>"><?=$bqr['title']?></a></li>
+	     	[/e:loop]
+	    </ul>
+		<div class="hr hr30"></div>
+		<script src="/d/js/acmsd/thea3.js"></script>
+    </div>
+</div>
+<div class="hr hr60"></div>
+[!--temp.foot--]
+<div class="fixeds corpsFix">
+	<div class="w1000">
+		<ul>
+			<li class="active" id="fixGoTop">返回<br>顶部</li>
+			<li id="fixAddMark">加入<br>书签</li>
+		</ul>
+	</div>
+</div>
+</body>
+</html>

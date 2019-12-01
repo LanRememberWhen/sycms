@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>{$info.title}-{$title}-{$system.name}</title>
+	<meta name="keywords" content="{$keywords}" />
+	<meta name="description" content="{$description}" />
+	<link rel="stylesheet" href="{$public}css/main.css">
+	<script src="{$public}js/jquery.js"></script>
+	<script src="{$public}js/jqScrollImg.js"></script>
+	<script src="{$public}js/main.js"></script>
+	<script type="text/javascript">
+	    function zibuTimers(){
+		    var EndTime= new Date('{$info.livetime|date="Y-m-d H:i:s"}');
+		    var NowTime = new Date();
+		    var t =EndTime.getTime() - NowTime.getTime();
+		    var s = '{$info.live_status}';
+		    if (s == 2) {
+		    	document.getElementById('zibuoJuTimers').innerHTML = '该赛事直播已结束';
+		    	document.getElementById('zibuoMain').style = 'display:none';
+		    	document.getElementById('lxMain').style = 'display:block';
+		    	return false;
+		    }
+			if(t == 1){
+	          	document.getElementById('zibuoJuTimers').innerHTML = '直播平台已开启！';
+	          	return false;
+		    }
+		    var d=Math.floor(t/1000/60/60/24);
+		    var h=Math.floor(t/1000/60/60%24);
+		    var m=Math.floor(t/1000/60%60);
+		    var s=Math.floor(t/1000%60);
+		    document.getElementById("t_d").innerHTML = d + "";
+		    document.getElementById("t_h").innerHTML = h + "";
+		    document.getElementById("t_m").innerHTML = m + "";
+		    document.getElementById("t_s").innerHTML = s + "";
+		}
+		setInterval(zibuTimers,1000);
+	</script>
+</head>
+<style>
+.breadcrumbs{display:inline;}
+</style>
+<body>
+{include file="common/header"/} 
+<div class="hr hr20"></div>
+<div class="w1000 clearfix zIndex99">
+	<div class="w647 ov">
+		<div class="locah locah2">
+			<span>当前位置：</span>
+			<div class="breadcrumbs"> <a href="/">首页</a> {tp:position name='v'} > <a href="{$v.url}">{$v.catname}</a> {/tp:position}</div>
+		</div>
+		<div class="zibuoHeader">
+			<h1 class="zibuoTitle">{$info.shorttitle}</h1>
+			<div class="zibuoJuTimers" id="zibuoJuTimers">	
+			    距离直播开始还有:
+                <a id="zibuoJuTimers"></a>
+	           	<span id="t_d">00</span> 天
+               	<span id="t_h">00</span> 时
+               	<span id="t_m">00</span> 分
+               	<span id="t_s">00</span> 秒
+			</div>
+		</div>
+		<div class="hr hr30"></div>
+		<div class="zibuoMain" id="zibuoMain">
+			<div class="inTroZibuo">
+				<div class="zibuoMainTitle">
+					<h4>直播信号</h4>
+				</div>
+				<ul class="clearfix zibuoMainList">
+				  	
+                </ul>
+            </div>
+            {if $info['live_status'] == 1}
+            <div class="livePlay" style="height: 485px;">
+                <iframe src="{$info.livelist}" width="100%" height="100%" frameborder="0" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
+            </div>
+            {/if}
+		</div>
+		<div class="lxMain" id="lxMain" style="display: none;">
+			<div class="inTroZibuo">
+				<div class="zibuoMainTitle">
+					<h4>视频录像</h4>
+				</div>
+				<ul class="clearfix zibuoMainList">
+				  	
+                </ul>
+			</div>
+		</div>
+		<div class="hr hr30"></div>
+		<div class="sideTitle">
+			<h4 class="fl">热门视频</h4>
+		</div>
+		<ul class="clearfix soccerStars">
+		    {tp:list id="23" name="list" limit="6" order="hits DESC"}
+			<li>
+				<a href="{$list.url}" title="{$list.title}">
+					<span><img src="{$list.litpic}" alt="{$list.title}"><i class="playBtn01"></i></span>
+					<b>{$list.title}</b>
+				</a>
+			</li>
+        	{/tp:list}		
+        </ul>
+	</div>
+	<div class="w323">
+        <div class="hr hr30"></div>
+		<div class="sideTitle">
+			<h4 class="fl">今日直播</h4>
+		</div>
+		<ul class="sideTodayVideoList">
+            {tp:list id="21" name="list" limit="10" order="livetime ASC" where="from_unixtime(livetime,'%Y-%m-%d')=curdate()"}
+            <li>
+				<a href="{$list.url}" style="height: 36px;line-height: 36px;"><span>{$list.livetime|date="H:i"}</span>{$list.livetype}&nbsp;&nbsp;&nbsp;&nbsp;{$list.shorttitle}</a>
+			</li>
+            {/tp:list}
+        </ul>
+	</div>
+</div>
+<div class="hr hr60"></div>
+{include file="common/footer"/} 
+</body>
+</html>

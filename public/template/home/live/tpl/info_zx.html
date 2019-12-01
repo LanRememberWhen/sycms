@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>[!--pagetitle--]</title>
+<meta name="keywords" content="[!--pagekey--]" />
+<meta name="description" content="[!--pagedes--]" />
+<link rel="stylesheet" href="[!--news.url--]skin/zb8/css/main.css">
+<script src="[!--news.url--]skin/zb8/js/jquery.js"></script>
+<script src="[!--news.url--]skin/zb8/js/jqScrollImg.js"></script>
+<script src="[!--news.url--]skin/zb8/js/main.js"></script>
+</head>
+<style>
+.breadcrumbs{display:inline;}
+</style>
+<body>
+<!--header-->
+[!--temp.head--]
+<!--navbox   end-->	
+<div class="hr hr20"></div>
+<div class="w1000 clearfix">
+	<div class="w647">
+		<div class="locah locah2">
+			<span>当前位置：</span>
+			<div class="breadcrumbs"> [!--newsnav--] &raquo; [!--pagetitle--]</div>
+		</div>
+		<div class="videoPageHeader clearfix">
+			<h1 class="fl">[!--pagetitle--]</h1>
+			<p class="fr">
+			    <span>点击：<i class="hits"><script src=[!--news.url--]ViewClick-[!--classid--]-[!--id--]></script></i>次</span>
+				<span>[!--newstime--]</span>
+			</p>
+		</div>
+		<div class="videoPagePlayBox">
+            [!--newstext--]
+        </div>
+		<div class="paging">[!--page.url--]</div> 
+		<script src="/d/js/acmsd/thea8.js"></script>
+		<div class="w1000">
+			<div class="w647 ov">
+				<div class="sideTitle">
+					<h4 class="fl">体坛图库</h4>
+				</div>
+				<ul class="clearfix soccerStars">
+			        [e:loop={7,6,0,1}] 
+			        <li>
+						<a target="_blank" href="<?=$bqsr[titleurl]?>">
+							<span><img src="<?=$bqr[titlepic]?>" alt="<?=$bqr['title']?>"><i class="playBtn01"></i></span>
+							<b><?=$bqr['title']?></b>
+						</a>
+					</li>
+					[/e:loop]
+				</ul>
+			</div>
+		</div>
+		<script src="/d/js/acmsd/thea7.js"></script>
+	</div>
+	<div class="w323">
+		<div class="side_ad"><script src="/d/js/acmsd/thea1.js"></script></div>
+		<div class="sideTitle">
+			<h4 class="fl">相关资讯</h4>
+		</div>
+		<ul class="circleOl">
+         	[e:loop={'selfinfo',3,1,0}] 
+         	<li class="tops"><i><?=$bqno?></i><a target="_blank" href="<?=$bqsr[titleurl]?>"><?=$bqr['title']?></a></li>
+         	[/e:loop]
+		 	[e:loop={'selfinfo','3,7',1,0}]
+          	<li ><i><?=$bqno+3?></i><a target="_blank" href="<?=$bqsr[titleurl]?>"><?=$bqr['title']?></a></li>
+         	[/e:loop]
+		</ul>
+		<div class="side_ad"><script src="/d/js/acmsd/thea2.js"></script></div>
+		<div class="sideTitle">
+			<h4 class="fl">热门资讯</h4>
+		</div>
+		<ul class="circleOl">
+         	[e:loop={62,3,0,0}] 
+         	<li class="tops"><i><?=$bqno?></i><a target="_blank" href="<?=$bqsr[titleurl]?>"><?=$bqr['title']?></a></li>
+         	[/e:loop]
+		 	[e:loop={62,'3,7',0,0}]
+          	<li ><i><?=$bqno+3?></i><a target="_blank" href="<?=$bqsr[titleurl]?>"><?=$bqr['title']?></a></li>
+         	[/e:loop]
+		</ul>
+	</div>
+</div>
+<div class="hr hr60"></div>
+[!--temp.foot--]
+</body>
+</html>

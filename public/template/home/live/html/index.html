@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>{$system.name}</title>
+<meta name="keywords" content="{$keywords}" />
+<meta name="description" content="{$description}" />
+<link rel="stylesheet" href="{$public}css/main.css">
+<script src="{$public}js/jquery.js"></script>
+<script src="{$public}js/jqScrollImg.js"></script>
+<script src="{$public}js/main.js"></script>
+</head>
+<style>
+.breadcrumbs{display:inline;}
+</style>
+<body>
+{include file="common/header"/} 
+<div class="hr hr14"></div>
+<div class="fixedNav" id="fixedNav">
+	<div class="w1000 p_re">
+		<ul>
+			<li class="n8_week1 active"><b>今天</b><span>{$todaydate}</span></li>
+			<li class="n8_week2"><b>{$secondweek}</b><span>{$seconddate}</span></li>
+			<li class="n8_week3"><b>{$threeweek}</b><span>{$threedate}</span></li>
+		</ul>		
+	</div>
+</div>
+<div class="w1000 clearfix p_re_9" id="indexMian">
+	<div class="w647">
+		<!--liveList-->
+		<div class="liveList">
+			<div class="liveListTitle">
+				<h3 class="fl"><i>直播</i>节目列表</h3>
+				<div class="fr todayNum" style="font-size:16px;">
+					今日直播 <b>{$live_num}</b> 场
+				</div>
+			</div>
+			<div class="liveListMain">
+            	<div class="liveListMainTitle" id="n8_week1">
+					<h4>今天</h4><span>{$todaydate}</span>
+				</div>
+				<ul class="liveEdayList">
+					{tp:list id="21" name="list" order="livetime ASC" where="from_unixtime(livetime,'%Y-%m-%d')=curdate()"}
+            		<li>
+						<i></i>
+						<b>{$list.livetime|date="h:i"}</b>
+						<a target="_blank" href="{$list.url}" class="fl" >{$list.livetype}&nbsp;&nbsp;&nbsp;&nbsp;{$list.shorttitle}</a>
+						<a target="_blank" href="{$list.url}" class="fr">在线直播</a>
+					</li>
+               		{/tp:list}   
+                </ul>
+				<div class="liveListMainTitle" id="n8_week2">
+					<h4>{$secondweek}</h4><span>{$seconddate}</span>
+				</div>
+				<ul class="liveEdayList">
+                	{tp:list id="21" name="list" where="from_unixtime(livetime,'%Y-%m-%d')=curdate() +INTERVAL 1 day"}
+            		<li>
+						<i></i>
+						<b>{$list.livetime|date="h:i"}</b>
+						<a target="_blank" href="{$list.url}" class="fl" >{$list.livetype}&nbsp;&nbsp;&nbsp;&nbsp;{$list.shorttitle}</a>
+						<a target="_blank" href="{$list.url}" class="fr">在线直播</a>
+					</li>
+               		{/tp:list}	
+                </ul>
+				<div class="liveListMainTitle" id="n8_week3">
+					<h4>{$threeweek}</h4><span>{$threedate}</span>
+				</div>
+				<ul class="liveEdayList">
+                    {tp:list id="21" name="list" where="from_unixtime(livetime,'%Y-%m-%d')=curdate() +INTERVAL 2 day"}
+            		<li>
+						<i></i>
+						<b>{$list.livetime|date="h:i"}</b>
+						<a target="_blank" href="{$list.url}" class="fl" >{$list.livetype}&nbsp;&nbsp;&nbsp;&nbsp;{$list.shorttitle}</a>
+						<a target="_blank" href="{$list.url}" class="fr">在线直播</a>
+					</li>
+               		{/tp:list}
+                </ul>
+			</div>
+		</div>
+		<!--liveList  end-->
+	</div>
+	<div class="w323 ov ">
+		<div class="sideTitle">
+			<h4 class="fl">篮球视频</h4>
+			<a target="_blank" href="/lq/pd" class="more fr">MORE ></a>
+		</div>
+		<ul class="team clearfix">
+		    {tp:list id="23" name="list" limit="4" where="litpic <>''"}
+			<li>
+				<a target="_blank" href="{$list.url}" title="{$list.title}">
+					<span><img src="{$list.litpic}" alt="{$list.title}"><i class="playBtn01"></i></span>
+					<b>{$list.title}</b>
+				</a>
+			</li>
+            {/tp:list}
+        </ul>
+		<div class="sideTitle">
+			<h4 class="fl">篮球录像</h4>
+			<a target="_blank" href="/lq/lx" class="more fr">MORE ></a>
+		</div>
+		<ul class="team clearfix">
+		    {tp:list id="23" name="list" limit="4" where="litpic <>''"} 
+			<li>
+				<a target="_blank" href="{$list.url}" title="{$list.title}">
+					<span><img src="{$list.litpic}" alt="{$list.title}"><i class="playBtn01"></i></span>
+					<b>{$list.title}</b>
+				</a>
+			</li>
+            {/tp:list}
+        </ul>
+		<div class="sideTitle">
+			<h4 class="fl">足球视频</h4>
+			<a target="_blank" href="/zq/pd" class="more fr">MORE ></a>
+		</div>
+		<ul class="team clearfix">
+		    {tp:list id="23" name="list" limit="4" where="litpic <>''"}
+			<li>
+				<a target="_blank" href="{$list.url}" title="{$list.title}">
+					<span><img src="{$list.litpic}" alt="{$list.title}"><i class="playBtn01"></i></span>
+					<b>{$list.title}</b>
+				</a>
+			</li>
+            {/tp:list}
+		</ul>
+		<div class="sideTitle">
+			<h4 class="fl">足球录像</h4>
+			<a target="_blank" href="/zq/lx" class="more fr">MORE ></a>
+		</div>
+		<ul class="team clearfix">
+		    {tp:list id="23" name="list" limit="4" where="litpic <>''"}
+			<li>
+				<a target="_blank" href="{$list.url}" title="{$list.title}">
+					<span><img src="{$list.litpic}" alt="{$list.title}"><i class="playBtn01"></i></span>
+					<b>{$list.title}</b>
+				</a>
+			</li>
+            {/tp:list}
+		</ul>
+		<div class="w323 j-side">
+			<div class="sideTitle">
+				<h4 class="fl">体坛资讯</h4>
+				<a target="_blank" href="/xinwen-24" class="more fr">MORE ></a>
+			</div>
+			<ul class="circleOl">
+		        {tp:list id="24" name="list" limit="10"}
+		        <li><i>{$key+1}</i><a target="_blank" href="{$list.url}">{$list.title}</a></li>
+		        {/tp:list}
+	        </ul>        
+		</div>
+	</div>
+</div>
+<div class="liveLink">
+	<div class="clearfix w1000 p_re_9">
+		<div class="links lh_24">
+			<h4 class="liveLinkTitle fs14"><b>友情连接</b>Links >></h4>
+			<p class="">
+				{tp:link name='link'}
+				<a href='{$link.url}' target='_blank'>{$link.name}</a>
+				{/tp:link}
+			</p>
+		</div>
+	</div>
+</div>
+{include file="common/footer"/}
+<div class="fixeds corpsFix">
+	<div class="w1000">
+		<ul>
+			<li class="active" id="fixGoTop">返回<br>顶部</li>
+			<li id="fixAddMark">加入<br>书签</li>
+		</ul>
+	</div>
+</div>
+</body>
+</html>

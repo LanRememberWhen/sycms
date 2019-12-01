@@ -1,0 +1,26 @@
+<!-- 公共底部 -->
+<div class="footer">
+    <p class="pTit-1"> <em>触屏版</em> | <a href="/">电脑版</a></p>
+    <p class="pTit-3"><em class="icon-group-small"></em>我的网站</p>
+    <p></p>
+</div>
+</section>
+<div class="toTop-btn" title="回到顶部" onClick="window.scrollTo(0, 0);"></div>
+<script type="text/javascript">
+    if (window.location.hash == "") { try { window.scrollTo(0, 1); } catch (e) { }; }
+    (function () {
+        window.onscroll = window.ontouchmove = window.onresize = function () {
+            if (document.documentElement.scrollTop + document.body.scrollTop > 800) {
+                document.querySelector(".toTop-btn").style.display = "block";
+            }
+            else {
+                document.querySelector(".toTop-btn").style.display = "none";
+            }
+        }
+    })();
+    function changeForm(url) {
+        window.location.href = url;
+    }
+</script>
+</div>
+<div style="position:absolute; width:0px; height:0px; z-index:1; display:none">统计代码</div>

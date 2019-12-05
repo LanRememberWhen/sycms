@@ -138,15 +138,38 @@
 		</ul>
 		<div class="w323 j-side">
 			<div class="sideTitle">
-				<h4 class="fl">体坛资讯</h4>
-				<a target="_blank" href="/xinwen-24" class="more fr">MORE ></a>
+				<h4 class="fl">最新资讯</h4>
 			</div>
-			<ul class="circleOl">
-		        {tp:list id="24" name="list" limit="10"}
-		        <li><i>{$key+1}</i><a target="_blank" href="{$list.url}">{$list.title}</a></li>
-		        {/tp:list}
-	        </ul>        
-		</div>
+			<div class="sideTavNav">
+				<span class="active">全部</span>
+				<i>|</i>
+				<span>足球</span>
+				<i>|</i>
+				<span>篮球</span>
+				<i>|</i>
+				<span>其他</span>
+			</div>
+	        <ul class="circleOl d-none" style="display:block;">
+	        	{tp:list id="24" name="list" limit="10"}
+	         	<li class="tops"><i>{$key+1}</i><a target="_blank" href="{$list.url}">{$list.title}</a></li>
+	         	{/tp:list}
+	        </ul>
+	        <ul class="circleOl d-none" style="display:none;">
+	        	{tp:list id="24" name="list" limit="10"}
+	         	<li class="tops"><i>{$key+1}</i><a target="_blank" href="{$list.url}">{$list.title}</a></li>
+	         	{/tp:list}
+	        </ul>
+	        <ul class="circleOl d-none" style="display:none;">
+	        	{tp:list id="24" name="list" limit="10"}
+	         	<li class="tops"><i>{$key+1}</i><a target="_blank" href="{$list.url}">{$list.title}</a></li>
+	         	{/tp:list}
+	        </ul>
+	        <ul class="circleOl d-none" style="display:none;">
+	        	{tp:list id="24" name="list" limit="10"}
+	         	<li class="tops"><i>{$key+1}</i><a target="_blank" href="{$list.url}">{$list.title}</a></li>
+	         	{/tp:list}
+	        </ul>
+        </div>
 	</div>
 </div>
 <div class="liveLink">
